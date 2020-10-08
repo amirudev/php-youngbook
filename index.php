@@ -6,45 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="./assets/style/index.css">
 </head>
 <body>
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-light" id="navbar">
-  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  			</button>
-  			<nav class="navbar navbar-light" id="navbar">
- 				<a class="navbar-brand" href="#">
-    				<img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-    				<span id="navbar-text">Bootstrap</span>
-  				</a>
-			</nav>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-   				 <ul class="navbar-nav mr-auto" id="navbar">
-			        <li class="nav-item active">
-			        	<a class="nav-link" href="#">Home</a>
-			      	</li>
-			     	<li class="nav-item">
-			     		<a class="nav-link" href="#">Link</a>
-			      	</li>
-			      	<li class="nav-item">
-			        	<a class="nav-link" href="#">Link</a>
-			      	</li>
-			      	<li class="nav-item">
-			       	 <a class="nav-link" href="#">Link</a>
-			      	</li>
-			      	<li class="nav-item">
-			        	<a class="nav-link" href="#">Link</a>
-			      	</li>
-    			</ul>
-			    <form class="form-inline my-2 my-lg-0">
-			    	<a href="">
-			      		<button class="btn mr-3" type="button" id="signinbutton">Login</button>    		
-			    	</a>
-			    	<a href="">
-			      		<button class="btn" type="button" id="signupbutton">Register</button>    		
-			    	</a>
-			    </form>
-  			</div>
-		</nav>
-	</header>
+	<?php require './page/components/header.php'; ?>
 	<div class="content">
 		<div class="container">
 			<div class="row">
@@ -62,6 +24,7 @@
 					<img src="./assets/image/index-camera.png" class="w-100 mr-auto px-100" id="index-camera">
 				</div>
 			</div>
+			<h1><?php echo $_SERVER['PHP_SELF'] ?></h1>
 		</div>
 	</div>
 </body>
