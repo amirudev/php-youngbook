@@ -24,7 +24,6 @@
 					<img src="./assets/image/index-camera.png" class="w-100 mr-auto px-100" id="index-camera">
 				</div>
 			</div>
-			<h1><?php echo $_SERVER['PHP_SELF'] ?></h1>
 		</div>
 	</div>
 </body>

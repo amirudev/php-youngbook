@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../../assets/style/header.css">
+	<?php if($_SERVER['PHP_SELF'] == '/php-youngbook/index.php') {?>
+		<link rel="stylesheet" type="text/css" href="assets/style/header.css">
+	<?php } else { ?>
+		<link rel="stylesheet" type="text/css" href="../../assets/style/header.css">
+	<?php } ?>
 </head>
 <body>
 	<?php $url = $_SERVER['PHP_SELF']; ?>
@@ -11,7 +15,6 @@
   			</button>
   			<nav class="navbar navbar-light" id="navbar">
  				<a class="navbar-brand" href="#">
-    				<img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
     				<span id="navbar-text">Bootstrap</span>
   				</a>
 			</nav>
@@ -38,33 +41,33 @@
 			     			<a class="nav-link" href="#">Message</a>
 			      		</li>
 			      		<li class="nav-item">
-			        		<a class="nav-link" href="./page/forum/">Forum</a>
+			        		<a class="nav-link" href="../forum/">Forum</a>
 			      		</li>
 			      		<li class="nav-item">
-			       	 		<a class="nav-link" href="./page/marketplace/">Marketplace</a>
+			       	 		<a class="nav-link" href="../marketplace/">Marketplace</a>
 			      		</li>
 			      	<?php } else if ($url == '/php-youngbook/page/forum/index.php') { ?>
 			      		<li class="nav-item">
 			     			<a class="nav-link" href="../../">Home</a>
 			      		</li>
 			      		<li class="nav-item">
-			     			<a class="nav-link" href="./page/message/">Message</a>
+			     			<a class="nav-link" href="../message/">Message</a>
 			      		</li>
 			      		<li class="nav-item">
 			     			<a class="nav-link" href="#">Forum</a>
 			      		</li>
 			      		<li class="nav-item">
-			       	 		<a class="nav-link" href="./page/marketplace/">Marketplace</a>
+			       	 		<a class="nav-link" href="../marketplace/">Marketplace</a>
 			      		</li>
 			      	<?php } else if ($url == '/php-youngbook/page/marketplace/index.php') { ?>
 			      		<li class="nav-item">
 			     			<a class="nav-link" href="../../">Home</a>
 			      		</li>
 			      		<li class="nav-item">
-			     			<a class="nav-link" href="./page/message/">Message</a>
+			     			<a class="nav-link" href="../message/">Message</a>
 			      		</li>
 			      		<li class="nav-item">
-			        		<a class="nav-link" href="./page/forum/">Forum</a>
+			        		<a class="nav-link" href="../forum/">Forum</a>
 			      		</li>
 			      		<li class="nav-item">
 			     			<a class="nav-link" href="#">Marketplace</a>
@@ -74,13 +77,13 @@
 			     			<a class="nav-link" href="../../">Home</a>
 			      		</li>
 			      		<li class="nav-item">
-			     			<a class="nav-link" href="./page/message/">Message</a>
+			     			<a class="nav-link" href="../message/">Message</a>
 			      		</li>
 			      		<li class="nav-item">
-			        		<a class="nav-link" href="./page/forum/">Forum</a>
+			        		<a class="nav-link" href="../forum/">Forum</a>
 			      		</li>
 			      		<li class="nav-item">
-			       	 		<a class="nav-link" href="./page/marketplace/">Marketplace</a>
+			       	 		<a class="nav-link" href="../marketplace/">Marketplace</a>
 			      		</li>
 			      	<?php } ?>
     			</ul>
