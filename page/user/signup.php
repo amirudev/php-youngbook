@@ -14,10 +14,10 @@
 			<img src="../../assets/image/user-signup.png" class="w-75">
 		</div>
 		<div class="col-xl-6">
-			<form>
+			<form action="../functions/user_signup.php" method="post">
 		  		<div class="form-group">
 		    		<label for="name">Name</label>
-		    		<input type="text" class="form-control" id="name" aria-describedby="name">
+		    		<input type="text" class="form-control" id="name" aria-describedby="name" name="name">
 		    		<small id="name" class="form-text text-muted">Pakailah nama aslimu untuk memudahkan orang lain mencarimu</small>
 		  		</div>
 		  		<div class="form-group">
@@ -26,12 +26,12 @@
         				<div class="input-group-prepend">
           					<div class="input-group-text">@</div>
         				</div>
-        			<input type="text" class="form-control" id="username" placeholder="Username">
+        			<input type="text" class="form-control" id="username" placeholder="Username" name="username">
       				</div>
     			</div>
 		  		<div class="form-group">
 			   	 	<label for="password">Password</label>
-			    	<input type="password" class="form-control" id="password">
+			    	<input type="password" class="form-control" id="password" name="password">
 		  		</div>
 		  		<div class="form-group form-check">
 			    	<input type="checkbox" class="form-check-input" id="termscondition">

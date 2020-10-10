@@ -8,7 +8,7 @@ $text = $_POST['text'];
 $sql = "INSERT INTO `forum_global` (`id`, `username`, `name`, `text`) VALUES (NULL, '$username', '$name', '$text');";
 
 if (mysqli_query($conn, $sql)) {
-	echo "NEW RECORD SAVED SUCCESSFULLY";
+	$_COOKIE['message'] = "NEW RECORD SAVED SUCCESSFULLY";
 } else {
 	echo "SOMETHING WENT WRONG, " . mysqli_error($conn);
 }
