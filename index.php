@@ -26,5 +26,6 @@
 			</div>
 		</div>
 	</div>
+	<?php echo $_SERVER['PHP_SELF'] ?>
 </body>
 </html>

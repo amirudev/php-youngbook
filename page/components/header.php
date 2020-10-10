@@ -15,7 +15,7 @@
   			</button>
   			<nav class="navbar navbar-light" id="navbar">
  				<a class="navbar-brand" href="#">
-    				<span id="navbar-text">Bootstrap</span>
+    				<span id="navbar-text">Youngbook</span>
   				</a>
 			</nav>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -87,14 +87,21 @@
 			      		</li>
 			      	<?php } ?>
     			</ul>
-			    <form class="form-inline my-2 my-lg-0">
+    			<?php if ($_SERVER['PHP_SELF'] == '/php-youngbook/index.php') { ?>
+			    	<a href="#">
+			      		<button class="btn mr-3" type="button" id="signinbutton">Login</button>    		
+			    	</a>
+			    	<a href="./page/user/signup.php">
+			      		<button class="btn" type="button" id="signupbutton">Register</button>
+			    	</a>
+			    <?php } else { ?>
 			    	<a href="">
 			      		<button class="btn mr-3" type="button" id="signinbutton">Login</button>    		
 			    	</a>
-			    	<a href="">
-			      		<button class="btn" type="button" id="signupbutton">Register</button>    		
+			    	<a href="../user/signup.php">
+			      		<button class="btn" type="button" id="signupbutton">Register</button>
 			    	</a>
-			    </form>
+			    <?php } ?>
   			</div>
 		</nav>
 	</header>
