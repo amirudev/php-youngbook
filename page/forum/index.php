@@ -8,21 +8,23 @@
 	<div class="container">
 		<h1>Forum</h1>
 		<?php require '../functions/mysqliconnect.php';
-		if(isset($message) || isset($_COOKIE['message'])) {
-			if(isset($_COOKIE['message'])){
-				echo 'MESSAGE';
-				$GLOBALS['message'] = "<strong>".$_COOKIE['message']."</strong>";
-				$GLOBALS['status'] = 'success';
+		session_start();
+		if(isset($message) || isset($_SESSION['messagecookie'])) {
+			if(isset($_SESSION['messagecookie'])){
+				echo 'messagecookie';
+				$message = "<strong>".$_SESSION['messagecookie']."</strong>";
+				$status = 'success';
 			}
 		echo '<div class="alert alert-' . $status . '" role="alert">
   					' . $message . '
-				</div>' . $_COOKIE['message']; // Harusnya ini yang di output
-				if(isset($_COOKIE['message'])){
+				</div>';
+				if(isset($_SESSION['messagecookie'])){
 					echo "TRUE MINT";
 				} else {
-					echo "FALSE MINT"; // BUGGGGGGGGGGGGGGG
+					echo "FALSE MINT";
 				}
-		}?>
+		}
+		echo json_encode($_SESSION);?>
 		<form action="../functions/forum_post.php" method="post">
 		  	<div class="form-group">
 		    	<label for="exampleFormControlInput1">Name</label>
