@@ -95,12 +95,25 @@
 			      		<button class="btn" type="button" id="signupbutton">Register</button>
 			    	</a>
 			    <?php } else { ?>
-			    	<a href="">
-			      		<button class="btn mr-3" type="button" id="signinbutton">Login</button>    		
-			    	</a>
-			    	<a href="../user/signup.php">
-			      		<button class="btn" type="button" id="signupbutton">Register</button>
-			    	</a>
+					<?php if($_COOKIE['userlogin']){ ?>
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="loginuserdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Dropdown
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+								<button class="dropdown-item" type="button">Action</button>
+								<button class="dropdown-item" type="button">Another action</button>
+								<button class="dropdown-item" type="button">Something else here</button>
+							</div>
+						</div>
+					<?php } else {?>
+						<a href="">
+							<button class="btn mr-3" type="button" id="signinbutton">Login</button>    		
+						</a>
+						<a href="../user/signup.php">
+							<button class="btn" type="button" id="signupbutton">Register</button>
+						</a>
+					<?php } ?>
 			    <?php } ?>
   			</div>
 		</nav>

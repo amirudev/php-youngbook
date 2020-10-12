@@ -15,16 +15,8 @@
 				$message = "<strong>".$_SESSION['messagecookie']."</strong>";
 				$status = 'success';
 			}
-		echo '<div class="alert alert-' . $status . '" role="alert">
-  					' . $message . '
-				</div>';
-				if(isset($_SESSION['messagecookie'])){
-					echo "TRUE MINT";
-				} else {
-					echo "FALSE MINT";
-				}
-		}
-		echo json_encode($_SESSION);?>
+			echo '<div class="alert alert-' . $status . '" role="alert">' . $message . '</div>';
+		} ?>
 		<form action="../functions/forum_post.php" method="post">
 		  	<div class="form-group">
 		    	<label for="exampleFormControlInput1">Name</label>
@@ -59,7 +51,7 @@
 			}
 		}
 		?>
-
-	</div>
+	</div><?php session_destroy(); ?>
+	<?php require '../components/footer.php'; ?>
 </body>
 </html>

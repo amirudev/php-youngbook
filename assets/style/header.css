@@ -1,43 +1,57 @@
 #navbar {
-	background-color: rgb(108, 95, 255);
-	margin: 0 auto;
+    background-color: rgb(108, 95, 255);
+    margin: 0 auto;
 }
+
 #navbar-text {
-	color: white;
+    color: white;
 }
+
 #signinbutton {
-	color: white;
-	background-color: transparent;
+    color: white;
+    background-color: transparent;
 }
+
 #signupbutton {
-	color: black;
-	background-color: white;
+    color: black;
+    background-color: white;
 }
+
 .btn {
-	padding: 14px 40px;
+    padding: 14px 40px;
 }
+
 #signupbutton:active {
-	color: white;
-	background-color: transparent;
+    color: white;
+    background-color: transparent;
 }
+
 #signinbutton:active {
-	color: black;
+    color: black;
 }
+
 #navbar li a {
-	color: white;
-	padding: 0px 20px;
+    color: white;
+    padding: 0px 20px;
 }
+
 #navbar .active a {
-	color: white;
-	font-weight: 600;
-	padding: 0px 20px;
+    color: white;
+    font-weight: 600;
+    padding: 0px 20px;
 }
+
 #navbar li a {
-	color: white;
-	padding: 0px 20px;
+    color: white;
+    padding: 0px 20px;
 }
+
 #navbar li a:hover {
-	color: white;
-	padding: 0px 20px;
-	font-weight: 600;
+    color: white;
+    padding: 0px 20px;
+    font-weight: 600;
+}
+
+#loginuserdropdown {
+    background-color: transparent;
 }
