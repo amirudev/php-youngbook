@@ -5,13 +5,12 @@
 </head>
 <body>
 	<?php require '../components/header.php'; ?>
-	<div class="container">
+	<div class="container mt-1">
 		<h1>Forum</h1>
 		<?php require '../functions/mysqliconnect.php';
 		session_start();
 		if(isset($message) || isset($_SESSION['messagecookie'])) {
 			if(isset($_SESSION['messagecookie'])){
-				echo 'messagecookie';
 				$message = "<strong>".$_SESSION['messagecookie']."</strong>";
 				$status = 'success';
 			}
@@ -19,16 +18,12 @@
 		} ?>
 		<form action="../functions/forum_post.php" method="post">
 		  	<div class="form-group">
-		    	<label for="exampleFormControlInput1">Name</label>
-		    	<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Wahyu Amirulloh" name="name">
-		  	</div>
-		  	<div class="form-group">
 		    	<label for="exampleFormControlInput2">Username</label>
-		    	<input type="text" class="form-control" id="exampleFormControlInput2" placeholder="@wahyuamirulloh" name="username">
+		    	<input type="text" name="username" class="form-control" id="exampleFormControlInput2" placeholder="Please login to join forum" value="<?php if(isset($_COOKIE['userlogin'])){ echo $_COOKIE['userlogin']; }?>">
 		  	</div>
 		  	<div class="form-group">
 			    <label for="exampleFormControlTextarea1">Forum Post</label>
-			    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text"></textarea>
+			    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text" <?php if(!isset($_COOKIE['userlogin'])){echo "disabled";} ?>></textarea>
 		  	</div>
 		  	<button type="submit" class="btn btn-primary mb-2">Post</button>
 		</form>
@@ -43,7 +38,7 @@
 				<div class="card m-2">
 				  <div class="card-body">
 				    <h5 class="card-title"><?php echo $row['name'] ?></h5>
-				    <h6 class="card-subtitle mb-2 text-muted"><?php echo $row['username'] ?></h6>
+				    <h6 class="card-subtitle mb-2 text-muted"><?php echo '@'.$row['username'] ?></h6>
 				    <p class="card-text"><?php echo $row['text'] ?></p>
 				  </div>
 				</div>

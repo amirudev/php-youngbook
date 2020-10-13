@@ -34,8 +34,8 @@
 			    	<input type="password" class="form-control" id="password" name="password">
 		  		</div>
 		  		<div class="form-group form-check">
-			    	<input type="checkbox" class="form-check-input" id="termscondition">
-			    	<label class="form-check-label" for="termscondition">Saya menyetujui <a href="#">syarat dan ketentuan</a> yang berlaku</label>
+			    	<input type="checkbox" class="form-check-input" id="keepmeloggedin" name="keepmeloggedin">
+			    	<label class="form-check-label" for="termscondition">Biarkan saya login dan langsung menggunakan</label>
 		  		</div>
 		  		<button type="submit" class="btn btn-primary">Submit</button>
 			</form>

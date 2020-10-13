@@ -5,7 +5,7 @@
 	$databasename = 'php-youngbook';
 
 	// Create Connection
-	$conn = mysqli_connect($servername, $username, $password, $databasename);
+	$GLOBALS['conn'] = mysqli_connect($servername, $username, $password, $databasename);
 
 	// Check Connection
 	if (!$conn) {

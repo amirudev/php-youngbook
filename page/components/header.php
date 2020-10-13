@@ -95,19 +95,18 @@
 			      		<button class="btn" type="button" id="signupbutton">Register</button>
 			    	</a>
 			    <?php } else { ?>
-					<?php if($_COOKIE['userlogin']){ ?>
+					<?php if(isset($_COOKIE['userlogin'])){ ?>
 						<div class="dropdown">
 							<button class="btn btn-secondary dropdown-toggle" type="button" id="loginuserdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Dropdown
+								<?php echo $_COOKIE['userlogin'] ?>
 							</button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-								<button class="dropdown-item" type="button">Action</button>
-								<button class="dropdown-item" type="button">Another action</button>
-								<button class="dropdown-item" type="button">Something else here</button>
+								<button class="dropdown-item" type="button">Account Setting</button>
+								<a href="../functions/user_signout.php"><button class="dropdown-item" type="button">Sign Out</button></a>
 							</div>
 						</div>
 					<?php } else {?>
-						<a href="">
+						<a href="../user/signin.php">
 							<button class="btn mr-3" type="button" id="signinbutton">Login</button>    		
 						</a>
 						<a href="../user/signup.php">
