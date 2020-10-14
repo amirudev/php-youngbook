@@ -16,10 +16,10 @@
 			}
 			echo '<div class="alert alert-' . $status . '" role="alert">' . $message . '</div>';
 		} ?>
-		<form action="../functions/forum_post.php" method="post">
+		<?php if(isset($_COOKIE['userlogin'])){ echo '<form action="../functions/forum_post.php" method="post">';}?>
 		  	<div class="form-group">
 		    	<label for="exampleFormControlInput2">Username</label>
-		    	<input type="text" name="username" class="form-control" id="exampleFormControlInput2" placeholder="Please login to join forum" value="<?php if(isset($_COOKIE['userlogin'])){ echo $_COOKIE['userlogin']; }?>">
+		    	<input type="text" name="username" class="form-control" id="exampleFormControlInput2" placeholder="Please login to join forum" value="<?php if(isset($_COOKIE['userlogin'])){ echo $_COOKIE['userlogin']; } ?>" readonly>
 		  	</div>
 		  	<div class="form-group">
 			    <label for="exampleFormControlTextarea1">Forum Post</label>

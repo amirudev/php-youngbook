@@ -1,8 +1,9 @@
 <?php
 require 'mysqliconnect.php';
 
-$username = $_POST['username'];
-$text = $_POST['text'];
+if(isset($_COOKIE['userlogin'])){
+	$username = $_POST['username'];
+	$text = $_POST['text'];
 
 function findName($username, $conn){
 	$sql = "SELECT `name` FROM `user_data` WHERE username='$username';";
@@ -21,7 +22,7 @@ if (mysqli_query($conn, $sql)) {
 	echo "SOMETHING WENT WRONG, " . mysqli_error($conn);
 }
 
-mysqli_close($conn);
+mysqli_close($conn);} else {$_COOKIE['message'] = "SERVER REJECTED POST";}
 
 header("Location: ../forum/");
 ?>

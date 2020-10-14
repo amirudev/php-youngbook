@@ -10,9 +10,14 @@
 	// Check Connection
 	if (!$conn) {
 		$status = 'danger';
-		$message = '<strong>Failed to connect</strong> ' . mysqli_connect_error();
+		$message = '<strong>Failed connect to server</strong> ' . mysqli_connect_error();
 	} else {
-		$status = 'success';
-		$message = 'Successfully Connected';
+		if(isset($_COOKIE['userlogin'])){
+			$status = 'success';
+			$message = 'You\'re connected to our server !' . mysqli_connect_error();
+		} else {
+			$status = 'warning';
+			$message = 'Please login / register your account';
+		}
 	}
 ?>
