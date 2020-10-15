@@ -8,7 +8,7 @@
 	<?php } ?>
 </head>
 <body>
-	<?php $url = $_SERVER['PHP_SELF']; ?>
+	<?php $url = $_SERVER['PHP_SELF']; session_start(); ?>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light" id="navbar">
   			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,10 +95,10 @@
 			      		<button class="btn" type="button" id="signupbutton">Register</button>
 			    	</a>
 			    <?php } else { ?>
-					<?php if(isset($_COOKIE['userlogin'])){ ?>
+					<?php if(isset($_SESSION['userlogin'])){ ?>
 						<div class="dropdown">
 							<button class="btn btn-secondary dropdown-toggle" type="button" id="loginuserdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<?php echo $_COOKIE['userlogin'] ?>
+								<?php echo $_SESSION['userlogin'] ?>
 							</button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
 								<button class="dropdown-item" type="button">Account Setting</button>

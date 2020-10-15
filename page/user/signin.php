@@ -8,10 +8,10 @@
 <body>
 <?php require '../components/header.php'; ?>
 <div class="container">
-		<?php session_start();
-			if(isset($_SESSION['messagecookie'])) {
-				if(isset($_SESSION['messagecookie'])){
-					$message = "<strong>".$_SESSION['messagecookie']."</strong>";
+		<?php
+			if(isset($_SESSION['passwordwrong'])) {
+				if(isset($_SESSION['passwordwrong'])){
+					$message = "<strong>".$_SESSION['passwordwrong']."</strong>";
 				}
 				echo '<div class="alert alert-danger" role="alert">' . $message . '</div>';
 			} ?>
@@ -21,6 +21,11 @@
 			<img src="../../assets/image/user-signup.png" class="w-75">
 		</div>
 		<div class="col-xl-6">
+			<?php if(isset($_COOKIE['passwordwrong'])){ ?>
+				<div class="alert alert-danger" role="alert">
+  					<?php echo $_COOKIE['passwordwrong']; ?>
+				</div>
+			<?php } ?>
 			<form action="../functions/user_signin.php" method="post">
 		  		<div class="form-group">
       				<label for="username">Username</label>

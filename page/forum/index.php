@@ -8,22 +8,21 @@
 	<div class="container mt-1">
 		<h1>Forum</h1>
 		<?php require '../functions/mysqliconnect.php';
-		session_start();
-		if(isset($message) || isset($_SESSION['messagecookie'])) {
-			if(isset($_SESSION['messagecookie'])){
-				$message = "<strong>".$_SESSION['messagecookie']."</strong>";
+		if(isset($message) || isset($_COOKIE['messagecookie'])) {
+			if(isset($_COOKIE['messagecookie'])){
+				$message = $_COOKIE['messagecookie'];
 				$status = 'success';
 			}
 			echo '<div class="alert alert-' . $status . '" role="alert">' . $message . '</div>';
 		} ?>
-		<?php if(isset($_COOKIE['userlogin'])){ echo '<form action="../functions/forum_post.php" method="post">';}?>
+		<?php if(isset($_SESSION['userlogin'])){ echo '<form action="../functions/forum_post.php" method="post">';}?>
 		  	<div class="form-group">
 		    	<label for="exampleFormControlInput2">Username</label>
-		    	<input type="text" name="username" class="form-control" id="exampleFormControlInput2" placeholder="Please login to join forum" value="<?php if(isset($_COOKIE['userlogin'])){ echo $_COOKIE['userlogin']; } ?>" readonly>
+		    	<input type="text" name="username" class="form-control" id="exampleFormControlInput2" placeholder="Please login to join forum" value="<?php if(isset($_SESSION['userlogin'])){ echo $_SESSION['userlogin']; } ?>" readonly>
 		  	</div>
 		  	<div class="form-group">
 			    <label for="exampleFormControlTextarea1">Forum Post</label>
-			    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text" <?php if(!isset($_COOKIE['userlogin'])){echo "disabled";} ?>></textarea>
+			    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text" <?php if(!isset($_SESSION['userlogin'])){echo "disabled";} ?>></textarea>
 		  	</div>
 		  	<button type="submit" class="btn btn-primary mb-2">Post</button>
 		</form>
@@ -46,7 +45,7 @@
 			}
 		}
 		?>
-	</div><?php session_destroy(); ?>
+	</div>
 	<?php require '../components/footer.php'; ?>
 </body>
 </html>

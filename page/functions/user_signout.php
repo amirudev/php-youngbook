@@ -1,4 +1,4 @@
 <?php
-setcookie('userlogin', '', time()-60*60*24, '/');
+session_destroy();
 header('Location: ../user/signin.php');
 ?>

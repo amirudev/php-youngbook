@@ -2,21 +2,25 @@
 require 'mysqliconnect.php';
 
 $username = $_POST['username'];
-$password = $_POST['username'];
+$password = $_POST['password'];
 
-$sql = 'SELECT * FROM user_data';
+$sql = "SELECT * FROM `user_data` WHERE `username` = '$username' AND `password` = '$password'";
 $result = mysqli_query($conn, $sql);
 
 echo $sql;
-echo json_encode($result);
+echo json_encode(mysqli_result($result));
 
-if(mysqli_num_rows($result) > 0){
+if(mysqli_num_rows($result) == 1){
 	session_start();
-	$_SESSION['messagecookie'] = 'Selamat datang kembali !';
-    setcookie('userlogin', $username, time()+60*60*24, '/');
-    header('Location: ../forum/');
+    // $_COOKIE['messagecookie'] = 'Selamat datang kembali !';
+    setcookie('messagecookie', "Hello, $username. Make your new post", time()+1, '/');
+    $_SESSION['userlogin'] = $username;
+    // header('Location: ../forum/');
+} else if(mysqli_num_rows($result) == 0){
+    setcookie('passwordwrong', 'Proses masuk gagal, Username atau password salah', time()+1, '/');
+    header('Location: ../user/signin.php');
 } else {
-    $_SESSION['messagecookie'] = 'Proses masuk gagal, Username atau password salah';
-    // header('Location: ../user/signin.php');
+    setcookie('passwordwrong', 'Kesalahan pada server, hubungi admin ( Data ganda pada database )', time()+1, '/');
+    header('Location: ../user/signin.php');
 }
 ?>
