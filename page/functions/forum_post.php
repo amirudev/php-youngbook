@@ -1,7 +1,8 @@
 <?php
 require 'mysqliconnect.php';
+session_start();
 
-if(isset($_COOKIE['userlogin'])){
+if(isset($_SESSION['userlogin'])){
 	$username = $_POST['username'];
 	$text = $_POST['text'];
 
@@ -21,6 +22,8 @@ if (mysqli_query($conn, $sql)) {
 } else {
 	echo "SOMETHING WENT WRONG, " . mysqli_error($conn);
 }
+
+echo $sql;
 
 mysqli_close($conn);} else {$_COOKIE['message'] = "SERVER REJECTED POST";}
 

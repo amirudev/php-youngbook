@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../../assets/style/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/style/bootstrap.min.css"> // Test, store this on header.php and delete here
 </head>
 <body>
 	<?php require '../components/header.php'; ?>
@@ -15,7 +15,7 @@
 			}
 			echo '<div class="alert alert-' . $status . '" role="alert">' . $message . '</div>';
 		} ?>
-		<?php if(isset($_SESSION['userlogin'])){ echo '<form action="../functions/forum_post.php" method="post">';}?>
+		<?php if(isset($_SESSION['userlogin'])){ echo '<form action="../functions/forum_post.php" method="post">'; }?>
 		  	<div class="form-group">
 		    	<label for="exampleFormControlInput2">Username</label>
 		    	<input type="text" name="username" class="form-control" id="exampleFormControlInput2" placeholder="Please login to join forum" value="<?php if(isset($_SESSION['userlogin'])){ echo $_SESSION['userlogin']; } ?>" readonly>
@@ -28,17 +28,21 @@
 		</form>
 </form>
   		<?php
-		$sql = 'SELECT * FROM forum_global';
+		$sql = 'SELECT * FROM forum_global LIMIT 10';
 		$result = mysqli_query($conn, $sql);
 		if (mysqli_num_rows($result) > 0){
 			// output data of each row
 			while ($row = mysqli_fetch_assoc($result)){
-				?>
+				$userid = $row['id']?>
 				<div class="card m-2">
 				  <div class="card-body">
 				    <h5 class="card-title"><?php echo $row['name'] ?></h5>
 				    <h6 class="card-subtitle mb-2 text-muted"><?php echo '@'.$row['username'] ?></h6>
-				    <p class="card-text"><?php echo $row['text'] ?></p>
+				    <p class="card-text"><?php echo $text = $row['text'] ?></p>
+					<?php if(isset($_SESSION['userlogin'])){ if($_SESSION['userlogin'] == $row['username']){ ?>
+						<a href='<?php echo "../forum/edit.php/?text=$text" ?>' class="card-link" >Edit</a>
+						<a href='<?php echo "../functions/forum_delete.php/?id=$userid" ?>' class="card-link">Delete</a>
+					<?php }}?>
 				  </div>
 				</div>
 				<?php
