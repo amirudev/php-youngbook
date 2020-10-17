@@ -11,11 +11,11 @@
 		if(isset($message) || isset($_COOKIE['messagecookie'])) {
 			if(isset($_COOKIE['messagecookie'])){
 				$message = $_COOKIE['messagecookie'];
-				$status = 'success';
+				$status = $_COOKIE['messagecookiestatus'];
 			}
 			echo '<div class="alert alert-' . $status . '" role="alert">' . $message . '</div>';
 		} ?>
-		<?php if(isset($_SESSION['userlogin'])){ echo '<form action="../functions/forum_post.php" method="post">'; }?>
+		<?php if(isset($_SESSION['userlogin'])){ echo '<form action="/php-youngbook/page/functions/forum_post.php" method="post">'; }?>
 		  	<div class="form-group">
 		    	<label for="exampleFormControlInput2">Username</label>
 		    	<input type="text" name="username" class="form-control" id="exampleFormControlInput2" placeholder="Please login to join forum" value="<?php if(isset($_SESSION['userlogin'])){ echo $_SESSION['userlogin']; } ?>" readonly>
@@ -28,7 +28,7 @@
 		</form>
 </form>
   		<?php
-		$sql = 'SELECT * FROM forum_global LIMIT 10';
+		$sql = 'SELECT * FROM `forum_global` ORDER BY `id` DESC LIMIT 10';
 		$result = mysqli_query($conn, $sql);
 		if (mysqli_num_rows($result) > 0){
 			// output data of each row
@@ -50,6 +50,5 @@
 		}
 		?>
 	</div>
-	<?php require '../components/footer.php'; ?>
 </body>
 </html>

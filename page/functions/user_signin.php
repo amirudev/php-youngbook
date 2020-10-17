@@ -15,6 +15,7 @@ if(mysqli_num_rows($result) == 1){
 	session_start();
     // $_COOKIE['messagecookie'] = 'Selamat datang kembali !';
     setcookie('messagecookie', "Hello, $name. Make your new post", time()+60*60, '/');
+    setcookie('messagecookiestatus', "success", time()+60*60, '/');
     $_SESSION['userlogin'] = $username;
     header('Location: ../forum/');
 } else if(mysqli_num_rows($result) == 0){

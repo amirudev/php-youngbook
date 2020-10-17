@@ -37,9 +37,8 @@
 							</button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
 								<button class="dropdown-item" type="button">Account Setting</button>
-								<a href="../functions/user_signout.php"><button class="dropdown-item" type="button">Sign Out</button></a>
+								<a href="/php-youngbook/page/functions/user_signout.php"><button class="dropdown-item" type="button">Sign Out</button></a>
 							</div>
-							<!-- SOME BUG NOT RESOLVED -->
 						</div>
 					<?php } else {?>
 						<a href="/php-youngbook/page/user/signin.php">
@@ -52,5 +51,7 @@
   			</div>
 		</nav>
 	</header>
+	<script src="/php-youngbook/assets/js/jquery-3.5.1.min.js"></script>
+	<script src="/php-youngbook/assets/js/bootstrap.min.js"></script>
 </body>
 </html>
