@@ -2,8 +2,7 @@
 <html>
 <head>
 	<title>PHP Youngbook</title>
-	<link rel="stylesheet" type="text/css" href="./assets/style/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./assets/style/index.css">
+	<link rel="stylesheet" type="text/css" href="/php-youngbook/assets/style/index.css">
 </head>
 <body>
 	<?php require './page/components/header.php'; ?>
@@ -21,7 +20,7 @@
 					</div>
 				</div>
 				<div class="col-xl">
-					<img src="./assets/image/index-camera.png" class="w-100 mr-auto px-100" id="index-camera">
+					<img src="/php-youngbook/assets/image/index-camera.png" class="w-100 mr-auto px-100" id="index-camera">
 				</div>
 			</div>
 		</div>

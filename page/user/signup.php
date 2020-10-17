@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title>Register Youngbook</title>
-	<link rel="stylesheet" type="text/css" href="../../assets/style/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/style/signup.css">
 </head>
 <body>
