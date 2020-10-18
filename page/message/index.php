@@ -5,23 +5,38 @@
 </head>
 <body>
 	<?php require '/opt/lampp/htdocs/php-youngbook/page/components/header.php'; ?>
+	<link rel="stylesheet" href="/php-youngbook/assets/style/message.css">
 	<div class="container">
 		<h1>Message</h1>
 		<?php
 		require '/opt/lampp/htdocs/php-youngbook/page/functions/mysqliconnect.php';
 		$myuser = $_SESSION['userlogin'];
-		$sql = "SELECT `receiver` FROM `messages` WHERE `username` = '$myuser' ORDER BY id DESC"; // ROMBAK TOTAL, TIAP USER PUNYA TABEL SENDIRI, DI DATABASE php_youngbook
+		$sql = "SELECT * FROM ( SELECT * FROM messages WHERE `receiver` = 'wahyuamirulloh' ORDER BY `id` DESC LIMIT 18446744073709551615 ) AS sub GROUP BY sub.`username` ORDER BY `id` DESC"; // ROMBAK TOTAL, TIAP USER PUNYA TABEL SENDIRI, DI DATABASE php_youngbook
 		$result = mysqli_query($conn, $sql);
 		if(mysqli_num_rows($result) > 0){ 
-			while($row = mysqli_fetch_assoc($result)){ ?>
-				<div class="card m-2">
-					<div class="card-body">
-						<h5 class="card-title"><?php $row['receiver'] ?></h5>
-						<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+			while($row = mysqli_fetch_assoc($result)){
+				$username = $row['username'];
+				$minago = intval((strtotime('now') - strtotime($row['timestamp']) + ( 5 * 3600 )) / 60 );
+				?>
+				<a id="linkname" href='<?php echo "/php-youngbook/page/message/chatbox.php?name=$username" ?>'>
+					<div class="card m-2">
+						<div class="card-body">
+							<h5 class="card-title"><strong><?php echo $row['username'] ?></strong></h5>
+							<p class="card-text"><?php echo $row['message'] ?></p>
+							<p class="card-text"><?php echo $minago . ' Menit yang lalu' ?></p>
+						</div>
 					</div>
-				</div>	
+				</a>
 			<?php }
 		} ?> 
 	</div>
+	<?php
+	// Playground
+	echo strtotime('now').'<br>';
+	echo strtotime('2020-10-18 11:00:00').'<br>';
+	$timepass = strtotime('now') - strtotime('20-10-18 11:00:00') + 5*3600;
+	echo $timepass.'<br>';
+	echo intval($timepass / 60);
+	?>
 </body>
 </html>
