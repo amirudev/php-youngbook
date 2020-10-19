@@ -1,0 +1,16 @@
+html,
+body,
+.container,
+.card {
+    max-height: 95%;
+}
+
+#chatbox {
+    max-height: 70vh;
+    overflow: auto;
+}
+
+button#chatbox-send {
+    border: 0;
+    padding: 0;
+}

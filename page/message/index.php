@@ -3,8 +3,11 @@
 <head>
 
 </head>
-<body>
-	<?php require '/opt/lampp/htdocs/php-youngbook/page/components/header.php'; ?>
+<body class="bg-light">
+	<?php 
+	require '/opt/lampp/htdocs/php-youngbook/page/components/header.php';
+	require '/opt/lampp/htdocs/php-youngbook/page/functions/message_picktime.php';
+	?>
 	<link rel="stylesheet" href="/php-youngbook/assets/style/message.css">
 	<div class="container">
 		<h1>Message</h1>
@@ -16,27 +19,19 @@
 		if(mysqli_num_rows($result) > 0){ 
 			while($row = mysqli_fetch_assoc($result)){
 				$username = $row['username'];
-				$minago = intval((strtotime('now') - strtotime($row['timestamp']) + ( 5 * 3600 )) / 60 );
+				$minago = intval((strtotime('now') - strtotime($row['timestamp']) + ( 5 * 3600 )) );
 				?>
-				<a id="linkname" href='<?php echo "/php-youngbook/page/message/chatbox.php?name=$username" ?>'>
+				<a id="linkname" href='<?php echo "/php-youngbook/page/message/chatbox.php?username=$username" ?>'>
 					<div class="card m-2">
 						<div class="card-body">
 							<h5 class="card-title"><strong><?php echo $row['username'] ?></strong></h5>
 							<p class="card-text"><?php echo $row['message'] ?></p>
-							<p class="card-text"><?php echo $minago . ' Menit yang lalu' ?></p>
+							<p class="card-text float-right text-secondary"><?php echo picktime($minago) ?></p>
 						</div>
 					</div>
 				</a>
 			<?php }
 		} ?> 
 	</div>
-	<?php
-	// Playground
-	echo strtotime('now').'<br>';
-	echo strtotime('2020-10-18 11:00:00').'<br>';
-	$timepass = strtotime('now') - strtotime('20-10-18 11:00:00') + 5*3600;
-	echo $timepass.'<br>';
-	echo intval($timepass / 60);
-	?>
 </body>
 </html>
