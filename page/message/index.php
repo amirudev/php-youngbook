@@ -14,7 +14,7 @@
 		<?php
 		require '/opt/lampp/htdocs/php-youngbook/page/functions/mysqliconnect.php';
 		$myuser = $_SESSION['userlogin'];
-		$sql = "SELECT * FROM ( SELECT * FROM messages WHERE `receiver` = 'wahyuamirulloh' ORDER BY `id` DESC LIMIT 18446744073709551615 ) AS sub GROUP BY sub.`username` ORDER BY `id` DESC"; // ROMBAK TOTAL, TIAP USER PUNYA TABEL SENDIRI, DI DATABASE php_youngbook
+		$sql = "SELECT * FROM ( SELECT * FROM messages WHERE `receiver` = '$myuser' ORDER BY `id` DESC LIMIT 18446744073709551615 ) AS sub GROUP BY sub.`username` ORDER BY `id` DESC"; // ROMBAK TOTAL, TIAP USER PUNYA TABEL SENDIRI, DI DATABASE php_youngbook
 		$result = mysqli_query($conn, $sql);
 		if(mysqli_num_rows($result) > 0){ 
 			while($row = mysqli_fetch_assoc($result)){
