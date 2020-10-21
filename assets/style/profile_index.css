@@ -1,0 +1,16 @@
+#jumbotron {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.profile {
+    position: relative;
+}
+
+#profile {
+    position: absolute;
+    top: -175%;
+    width: 60%;
+    border-radius: 100%;
+}

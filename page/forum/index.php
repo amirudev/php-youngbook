@@ -36,10 +36,10 @@
 				$userid = $row['id']?>
 				<div class="card m-2">
 				  <div class="card-body">
-				    <h5 class="card-title"><?php echo $row['name'] ?></h5>
-				    <h6 class="card-subtitle mb-2 text-muted"><?php echo '@'.$row['username'] ?></h6>
+				    <a href="/php-youngbook/page/profile/index.php?username=<?php echo $username = $row['username'] ?>"><h5 class="card-title"><?php echo $row['name'] ?></h5></a>
+				    <h6 class="card-subtitle mb-2 text-muted"><?php echo '@'.$username ?></h6>
 				    <p class="card-text"><?php echo $row['text'] ?></p>
-					<?php if(isset($_SESSION['userlogin'])){ if($_SESSION['userlogin'] == $row['username']){ ?>
+					<?php if(isset($_SESSION['userlogin'])){ if($_SESSION['userlogin'] == $username){ ?>
 						<a href='<?php echo "/php-youngbook/page/forum/edit.php/?id=$userid" ?>' class="card-link" >Edit</a>
 						<a href='<?php echo "/php-youngbook/page/functions/forum_delete.php/?id=$userid" ?>' class="card-link">Delete</a>
 					<?php }}?>
