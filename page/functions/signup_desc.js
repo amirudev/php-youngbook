@@ -36,10 +36,8 @@ provinsi = () => {
 
 kabupaten = () => {
     let id = document.getElementById('provinsi').value;
-    url = `https: //cors-anywhere.herokuapp.com/https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=${id}`;
+    url = `https://cors-anywhere.herokuapp.com/https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=${id}`;
     getdata(url, "kota_kabupaten");
 }
 
 provinsi();
-
-// ERROR : TypeError: Failed to fetch
