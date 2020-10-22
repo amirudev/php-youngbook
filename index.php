@@ -27,5 +27,6 @@
 	</div>
 	<?php echo $_SERVER['PHP_SELF'] ?>
 	<?php require './page/components/footer.php'; ?>
+	<?php require 'https://dev.farizdotid.com/api/daerahindonesia/provinsi' ?>
 </body>
 </html>

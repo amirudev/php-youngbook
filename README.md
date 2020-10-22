@@ -1,6 +1,6 @@
 # php-youngbook
 Status : Under Development
-Version : 0.5 ( 40% )
+Version : 0.5.1 ( 40% )
 Changelog :
 ( 08/10/2020 ) - Improving Header and Relocate folder files
 ( 10/10/2020 ) - Developing signup page
@@ -12,3 +12,4 @@ Changelog :
 ( 19/10/2020 ) - Add functionality messaging
 ( 20/10/2020 ) - Bug fixing on messaging
 ( 21/10/2020 ) - Add Profile Page
+( 22/10/2020 ) - Add Signup_Desc page

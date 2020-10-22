@@ -2,13 +2,13 @@
 <html>
 <head>
 	<title>Register Youngbook</title>
-	<link rel="stylesheet" type="text/css" href="../../assets/style/signup.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../../assets/style/signup.css"> -->
 </head>
 <body>
-<?php require '../components/header.php'; ?>
+<?php require '/opt/lampp/htdocs/php-youngbook/page/components/header.php'; ?>
 <div class="container">
-	<div class="row" id="form">
-		<div class="col-xl-6 pt-100">
+	<div class="row mt-5" id="form">
+		<div class="col-xl-6">
 			<h1>Create your<br>Account</h1>
 			<img src="../../assets/image/user-signup.png" class="w-75">
 		</div>
