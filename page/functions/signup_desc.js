@@ -1,10 +1,4 @@
-const header = {
-    headers: {
-        "content-type": "application/json; charset=UTF-8",
-        "connection": "keep-alive"
-    },
-    method: "GET",
-};
+import { header } from './api_setting.js';
 
 appendloc = (district, id, location) => {
     let address = document.getElementById(district);

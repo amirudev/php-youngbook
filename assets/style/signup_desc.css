@@ -1,8 +1,14 @@
+body {
+    overflow: hidden;
+}
+
 #text-intro {
     background-color: rgb(108, 95, 255);
-    padding: 38vh 10vh;
+    padding: 39vh 10vh;
+    color: white;
 }
 
 form {
     width: 80%;
+    margin: 15vh 0;
 }

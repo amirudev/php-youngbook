@@ -14,19 +14,19 @@
                 <h3>Let people knows who you are</h3>
             </div>
             <div class="col-6 bg-light">
-                <form action="#" method="POST">
+                <form action="/php-youngbook/page/functions/user_signup_desc.php" method="POST" class="mx-auto">
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="bio">Bio</label>
+                    <textarea class="form-control" id="bio" rows="3" name="bio"></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="address">Example select</label>
-                    <select class="form-control" id="provinsi" name="province" onchange="kabupaten()">
+                <div class="form-provinsi">
+                    <label for="provinsi">Provinsi</label>
+                    <select class="form-control" id="provinsi" name="provinsi" onchange="kabupaten()">
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="address">Example select</label>
-                    <select class="form-control" id="kota_kabupaten" name="city">
+                    <label for="kota_kabupaten">Kota atau kabupaten</label>
+                    <select class="form-control" id="kota_kabupaten" name="kota_kabupaten">
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>

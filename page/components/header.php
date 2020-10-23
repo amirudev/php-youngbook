@@ -44,7 +44,7 @@
 						<a href="/php-youngbook/page/user/signin.php">
 							<button class="btn mr-3" type="button" id="signinbutton">Login</button>    		
 						</a>
-						<a href="../user/signup.php">
+						<a href="/php-youngbook/page/user/signup.php">
 							<button class="btn" type="button" id="signupbutton">Register</button>
 						</a>
 					<?php } ?>
