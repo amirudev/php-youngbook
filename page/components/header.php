@@ -33,10 +33,10 @@
 					<?php if(isset($_SESSION['userlogin'])){ ?>
 						<div class="dropdown">
 							<button class="btn btn-secondary dropdown-toggle" type="button" id="loginuserdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<?php echo $_SESSION['userlogin'] ?>
+								<?php echo $userlogin = $_SESSION['userlogin'] ?>
 							</button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-								<button class="dropdown-item" type="button">Account Setting</button>
+								<a href="/php-youngbook/page/profile/index.php?username=<?php echo $userlogin ?>"><button class="dropdown-item" type="button">Account Setting</button></a>
 								<a href="/php-youngbook/page/functions/user_signout.php"><button class="dropdown-item" type="button">Sign Out</button></a>
 							</div>
 						</div>

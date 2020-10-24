@@ -1,4 +1,12 @@
-import { header } from './api_setting.js';
+// import { header } from '/php-youngbook/page/functions/api_setting.js';
+
+header = {
+    headers: {
+        "content-type": "application/json; charset=UTF-8",
+        "connection": "keep-alive"
+    },
+    method: "GET",
+}
 
 appendloc = (district, id, location) => {
     let address = document.getElementById(district);
@@ -8,7 +16,7 @@ appendloc = (district, id, location) => {
     address.appendChild(option);
 }
 
-let getdata = (url, district) => {
+getdata = (url, district) => {
     fetch(url, header)
         .then(data => { return data.json() })
         .then(res => {

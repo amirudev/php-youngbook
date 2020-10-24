@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php
-    require 'mysqliconnect.php';
-    echo $bio = $_POST['bio'];
-    echo $provinsi_id = $_POST['provinsi'];
-    echo $kota_id = $_POST['kota_kabupaten'];
-    ?>
-    <script src="/php-youngbook/page/functions/user_signup_pickname.js"></script>
-    <!-- ERROR : Uncaught SyntaxError: Cannot use import statement outside a module -->
-</body>
-</html>
+<?php
+require 'mysqliconnect.php';
+$bio = $_POST['bio'];
+$kota_id = $_POST['kota_kabupaten'];
+$username = $_SESSION['userlogin'];
+
+$sql = "UPDATE `user_data` SET `bio` = `$bio`, `location` = `$kota_id` WHERE `username` = `$username`";
+
+if(mysqli_query($conn, $sql)){
+    header('Location: /php-youngbook/page/profile/index.php');
+} else {
+    header('Location: /php-youngbook/page/forum/index.php');
+}
+?>
