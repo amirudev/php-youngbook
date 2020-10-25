@@ -9,6 +9,7 @@ $sql = "INSERT INTO `user_data` (`username`, `name`, `password`) VALUES ('$usern
 if(mysqli_query($conn, $sql)) {
 	session_start();
 	setcookie('messagecookie', 'Congratulations ! Create a new post', time()+60*60, '/');
+	setcookie('messagecookiestatus', 'success', time()+60*60, '/');
 	$_SESSION['userlogin'] = $username;
 	header('Location: /php-youngbook/page/user/signup_desc.php');
 } else {

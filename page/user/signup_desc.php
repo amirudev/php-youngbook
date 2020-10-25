@@ -29,6 +29,7 @@
                     <select class="form-control" id="kota_kabupaten" name="kota_kabupaten">
                     </select>
                 </div>
+                <a href="/php-youngbook/page/profile/index.php?username=<?php echo $_SESSION['userlogin'] ?>" class="btn btn-warning">Nanti Saja</a>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 <script src="/php-youngbook/page/functions/signup_desc.js"></script>

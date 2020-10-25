@@ -22,7 +22,13 @@
                                 <img src="/php-youngbook/assets/image/profile_default.png" alt="Profile Picture" id="profile">
                             </div>
                             <div class="col-9" id="profile-button">
-                                <a href="#" class="btn btn-primary float-right">Kirim Pesan</a>
+                                <?php
+                                $username = $_GET['username'];
+                                if($username == $_SESSION['userlogin']){ ?>
+                                    <a href="/php-youngbook/page/user/signup_desc.php" class="btn btn-primary float-right">Edit Informasi</a>
+                                <?php } else { ?>
+                                    <a href="/php-youngbook/page/message/chatbox.php?username=<?php echo $username ?>" class="btn btn-primary float-right">Kirim Pesan</a>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -32,9 +38,9 @@
                         $sql = "SELECT * FROM `user_data` WHERE `username` = '$username'";
                         $userdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
                         ?>
-                        <h4><strong><?php echo $userdata['name'] ?></strong></h4>
-                        <h5><?php echo $userdata['bio'] ?></h5>
-                        <h5><?php echo $userdata['location'] ?></h5>
+                        <?php if(isset($userdata['name'])){ ?><h4><strong><?php echo $userdata['name'] ?></strong></h4><?php } ?>
+                        <?php if(isset($userdata['bio'])){ ?><h5><?php echo $userdata['bio'] ?></h5><?php } ?>
+                        <?php if(isset($userdata['location'])){ ?><h5 id="location_id"><?php echo $userdata['location'] ?></h5><?php } ?>
                     </div>
                     <div class="my-4">
                     <?php
@@ -64,5 +70,7 @@
             </div>
         </div>
     </div>
+    <script src="/php-youngbook/page/functions/profile_picklocation.js"></script>
+    <script>location_pickname();</script>
 </body>
 </html>

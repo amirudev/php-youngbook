@@ -1,5 +1,3 @@
-// import { header } from '/php-youngbook/page/functions/api_setting.js';
-
 header = {
     headers: {
         "content-type": "application/json; charset=UTF-8",

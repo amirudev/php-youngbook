@@ -14,7 +14,7 @@ if(isset($_SESSION['userlogin'])){
 		function findName($username, $conn){
 			$sql = "SELECT `name` FROM `user_data` WHERE username='$username';";
 			json_encode($result = mysqli_query($conn, $sql));
-			$result = (mysqli_fetch_assoc($result));
+			$result = mysqli_fetch_assoc($result);
 			return $result['name'];
 		}
 		

@@ -13,7 +13,7 @@
     require '/opt/lampp/htdocs/php-youngbook/page/functions/message_pickname.php';
     $user = $_SESSION['userlogin'];
     $senderusername = $_GET['username'];
-    $sendername = pickname($conn, $_GET['username']);
+    $sendername = pickname($conn, $senderusername);
     ?>
     <div class="container my-2">
         <div class="card">
