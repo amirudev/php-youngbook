@@ -19,7 +19,7 @@
 		if(mysqli_num_rows($result) > 0){ 
 			while($row = mysqli_fetch_assoc($result)){
 				$username = $row['username'];
-				$minago = intval((strtotime('now') - strtotime($row['timestamp']) + ( 5 * 3600 )) );
+				$minago = intval((strtotime('now') - strtotime($row['timestamp']) + ( 6 * 3600 )) );
 				?>
 				<a id="linkname" href='<?php echo "/php-youngbook/page/message/chatbox.php?username=$username" ?>'>
 					<div class="card m-2">

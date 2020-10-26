@@ -25,14 +25,17 @@
                                 <?php
                                 $username = $_GET['username'];
                                 if($username == $_SESSION['userlogin']){ ?>
-                                    <a href="/php-youngbook/page/user/signup_desc.php" class="btn btn-primary float-right">Edit Informasi</a>
+                                <div class="float-right">
+                                    <a href="/php-youngbook/page/user/signup_desc.php" class="btn btn-primary">Edit Informasi</a>
+                                    <p>1 Friends</p>
+                                </div>
                                 <?php } else { ?>
                                     <a href="/php-youngbook/page/message/chatbox.php?username=<?php echo $username ?>" class="btn btn-primary float-right">Kirim Pesan</a>
                                 <?php } ?>
                             </div>
                         </div>
                     </div>
-                    <div class="profile-desc mt-3">
+                    <div class="profile-desc">
                         <?php
                         $username = $_GET['username'];
                         $sql = "SELECT * FROM `user_data` WHERE `username` = '$username'";

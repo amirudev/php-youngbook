@@ -10,9 +10,13 @@
 
 #profile {
     position: absolute;
-    top: -175%;
+    top: -100%;
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 100%;
+}
+
+.profile-desc {
+    margin-top: -30px;
 }
