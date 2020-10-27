@@ -16,3 +16,10 @@ Changelog :
 ( 23/10/2020 ) - Try add functionality on signup_desc
 ( 24/10/2020 ) - Code efficiency and restructuring some code
 ( 25/10/2020 ) - Fixing bug on signup_desc and add functionality
+( 27/10/2020 ) - Add functionality who friends and add icon
+
+TO DO Next Update
+- Friend Page
+- Dynamic Photo Profile
+- Forum Post Friends Timeline
+- Marketplace

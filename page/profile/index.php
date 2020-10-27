@@ -24,10 +24,22 @@
                             <div class="col-9" id="profile-button">
                                 <?php
                                 $username = $_GET['username'];
-                                if($username == $_SESSION['userlogin']){ ?>
+                                if($username == $_SESSION['userlogin']){ 
+                                ?>
                                 <div class="float-right">
                                     <a href="/php-youngbook/page/user/signup_desc.php" class="btn btn-primary">Edit Informasi</a>
-                                    <p>1 Friends</p>
+                                    <p>
+                                    <?php
+                                    $sqlfriends = "SELECT `friends` FROM `user_data` WHERE `username` = '$username'";
+                                    $resultfriends = mysqli_query($conn, $sqlfriends);
+                                    if($resultfriends){
+                                        $countfriend = count(explode(", ", mysqli_fetch_assoc($resultfriends)['friends']));
+                                        echo $countfriend . ' Friends';
+                                    } else {
+                                        echo 'No Result';
+                                    }
+                                    ?>
+                                    </p>
                                 </div>
                                 <?php } else { ?>
                                     <a href="/php-youngbook/page/message/chatbox.php?username=<?php echo $username ?>" class="btn btn-primary float-right">Kirim Pesan</a>
@@ -42,7 +54,7 @@
                         $userdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
                         ?>
                         <?php if(isset($userdata['name'])){ ?><h4><strong><?php echo $userdata['name'] ?></strong></h4><?php } ?>
-                        <?php if(isset($userdata['bio'])){ ?><h5><?php echo $userdata['bio'] ?></h5><?php } ?>
+                        <?php if(isset($userdata['bio'])){ ?><h5><i class="far fa-sticky-note"></i><?php echo ' ' . $userdata['bio'] ?></h5><?php } ?>
                         <?php if(isset($userdata['location'])){ ?><h5 id="location_id"><?php echo $userdata['location'] ?></h5><?php } ?>
                     </div>
                     <div class="my-4">

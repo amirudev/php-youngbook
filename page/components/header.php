@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="/php-youngbook/assets/style/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/php-youngbook/assets/style/header.css">
+	<script src="https://kit.fontawesome.com/3bea811d2b.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<?php $url = $_SERVER['PHP_SELF']; session_start(); ?>

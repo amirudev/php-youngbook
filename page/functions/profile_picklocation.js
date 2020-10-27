@@ -20,7 +20,7 @@ location_pickname = (id) => {
                 .then(data => { return data.json(); })
                 .then(res => {
                     console.log(location_name += ', ' + res.nama);
-                    location_id.innerHTML = location_name;
+                    location_id.innerHTML = '<i class="fas fa-map-marked-alt"></i> ' + location_name;
                     console.log("Completed")
                 })
                 .catch(err => { console.log(err) })
