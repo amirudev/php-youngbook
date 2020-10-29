@@ -41,6 +41,6 @@ Now, you can buy a lot of cool stuff from other users online, we filtered user b
 
 ### TO DO Next Update
 - Friend Page
-- Dynamic Photo Profile
+- Dynamic Photo Profile ( On Development )
 - Forum Post Friends Timeline
 - Marketplace

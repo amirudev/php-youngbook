@@ -14,16 +14,28 @@
     <div class="bg-light">
         <div class="container p-5">
             <div class="card">
+            <?php
+            $username = $_GET['username'];
+            $sql = "SELECT * FROM `user_data` WHERE `username` = '$username'";
+            $userdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+            ?>
                 <img src="/php-youngbook/assets/image/profile_jumbotron.jpg" class="card-img-top" alt="Jumbotron" id="jumbotron">
                 <div class="card-body">
                     <div class="profile">
                         <div class="row">
-                            <div class="col-3">
-                                <img src="/php-youngbook/assets/image/profile_default.png" alt="Profile Picture" id="profile">
+                            <div class="col-3" id="profile-image">
+                                <?php if ($userdata['profile_image'] == NULL){ ?>
+                                    <div class="relative">
+                                        <img src="/php-youngbook/data/image_profile/profile_default.png" alt="Profile Picture" id="profile">
+                                        <i class="fas fa-pencil-alt fa-3x"></i>
+                                    </div>
+                                <?php } else { ?>
+                                    <img src="/php-youngbook/data/image_profile/profile_default.png" alt="Profile Picture" id="profile">
+                                    <i class="fas fa-pencil-alt"></i>
+                                <?php } ?>
                             </div>
                             <div class="col-9" id="profile-button">
                                 <?php
-                                $username = $_GET['username'];
                                 if($username == $_SESSION['userlogin']){ 
                                 ?>
                                 <div class="float-right">
@@ -48,11 +60,6 @@
                         </div>
                     </div>
                     <div class="profile-desc">
-                        <?php
-                        $username = $_GET['username'];
-                        $sql = "SELECT * FROM `user_data` WHERE `username` = '$username'";
-                        $userdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
-                        ?>
                         <?php if(isset($userdata['name'])){ ?><h4><strong><?php echo $userdata['name'] ?></strong></h4><?php } ?>
                         <?php if(isset($userdata['bio'])){ ?><h5><i class="far fa-sticky-note"></i><?php echo ' ' . $userdata['bio'] ?></h5><?php } ?>
                         <?php if(isset($userdata['location'])){ ?><h5 id="location_id"><?php echo $userdata['location'] ?></h5><?php } ?>
