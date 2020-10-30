@@ -20,7 +20,7 @@ Now, you can buy a lot of cool stuff from other users online, we filtered user b
 
 ## Changelog
 > Status : Under Development
-> Version : 0.5.5 ( 40% )
+> Version : 0.5.6 ( 40% )
 ### Changelog :
 - ( 08/10/2020 ) - Improving Header and Relocate folder files
 - ( 10/10/2020 ) - Developing signup page
@@ -38,9 +38,11 @@ Now, you can buy a lot of cool stuff from other users online, we filtered user b
 - ( 25/10/2020 ) - Fixing bug on signup_desc and add functionality
 - ( 27/10/2020 ) - Add functionality who friends and add icon
 - ( 28/10/2020 ) - Updating Readme
+- ( 30/10/2020 ) - Adding update photo function
 
 ### TO DO Next Update
 - Friend Page
-- Dynamic Photo Profile ( On Development )
+- Dynamic Photo Profile ( Success >> Debugging )
 - Forum Post Friends Timeline
 - Marketplace
+- Add Friend Button

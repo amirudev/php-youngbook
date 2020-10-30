@@ -23,15 +23,21 @@
                 <div class="card-body">
                     <div class="profile">
                         <div class="row">
-                            <div class="col-3" id="profile-image">
-                                <?php if ($userdata['profile_image'] == NULL){ ?>
-                                    <div class="relative">
-                                        <img src="/php-youngbook/data/image_profile/profile_default.png" alt="Profile Picture" id="profile">
+                            <div class="col-3">
+                                <?php if ($userdata['profile_image'] == 1){ ?>
+                                <a href="/php-youngbook/page/user/signup_desc.php">
+                                    <div id="profile-image">
+                                        <img src="/php-youngbook/data/image_profile/<?php echo $username ?>.jpg" alt="Profile Picture" id="profile">
                                         <i class="fas fa-pencil-alt fa-3x"></i>
                                     </div>
+                                </a>
                                 <?php } else { ?>
-                                    <img src="/php-youngbook/data/image_profile/profile_default.png" alt="Profile Picture" id="profile">
-                                    <i class="fas fa-pencil-alt"></i>
+                                <a href="/php-youngbook/page/user/signup_desc.php">
+                                    <div id="profile-image">
+                                        <img src="/php-youngbook/data/image_profile/profile_default.png" alt="Profile Picture" id="profile">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </div>
+                                </a>
                                 <?php } ?>
                             </div>
                             <div class="col-9" id="profile-button">

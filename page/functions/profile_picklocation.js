@@ -10,7 +10,7 @@ location_pickname = (id) => {
     let location_id = document.getElementById('location_id');
     let location_id_value = location_id.innerHTML;
     let url = `https://cors-anywhere.herokuapp.com/http://dev.farizdotid.com/api/daerahindonesia/kota/${location_id_value}`;
-    location_id.innerHTML = 'Loading ...';
+    location_id.innerHTML = '';
     fetch(url, header)
         .then(data => { return data.json(); })
         .then(res => {

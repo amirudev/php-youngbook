@@ -21,10 +21,18 @@
     margin-top: 0;
 }
 
-#profile-image i {
+#profile-image {
     position: relative;
-    top: -50px;
+}
+
+#profile-image i {
+    position: absolute;
+    bottom: 0px;
     left: 50px;
     color: gray;
     display: none;
+}
+
+#profile-image img:hover~#profile-image i {
+    display: block;
 }
