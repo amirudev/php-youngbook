@@ -11,6 +11,7 @@
     require '/opt/lampp/htdocs/php-youngbook/page/components/header.php';
     require '/opt/lampp/htdocs/php-youngbook/page/functions/mysqliconnect.php';
     require '/opt/lampp/htdocs/php-youngbook/page/functions/message_pickname.php';
+    if(isset($_SESSION['userlogin'])){
     $user = $_SESSION['userlogin'];
     $senderusername = $_GET['username'];
     $sendername = pickname($conn, $senderusername);
@@ -54,5 +55,7 @@
                 </form>
             </div>
     </div>
+        
+    <?php } ?>
 </body>
 </html>

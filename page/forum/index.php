@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
+	<link rel="stylesheet" href="/php-youngbook/assets/style/forum_index.css">
 </head>
 <body>
 	<?php require '../components/header.php'; ?>
@@ -26,16 +26,22 @@
 		  	</div>
 		  	<button type="submit" class="btn btn-primary mb-2">Post</button>
 		</form>
-</form>
   		<?php
 		$sql = 'SELECT * FROM `forum_global` ORDER BY `id` DESC LIMIT 10';
 		$result = mysqli_query($conn, $sql);
 		if (mysqli_num_rows($result) > 0){
 			// output data of each row
 			while ($row = mysqli_fetch_assoc($result)){
-				$userid = $row['id']?>
+				$userid = $row['id'];
+				?>
 				<div class="card m-2">
 				  <div class="card-body">
+					<?php $imageURL = "/php-youngbook/data/image_profile/" . $row['username'] . ".jpg"; ?>
+				  	<?php if(file_exists("/opt/lampp/htdocs" . $imageURL)){ ?>
+				  	<img src="<?php echo $imageURL ?>">
+					<?php } else { ?>
+						<img src="/php-youngbook/data/image_profile/profile_default.jpg">
+					<?php } ?>
 				    <a href="/php-youngbook/page/profile/index.php?username=<?php echo $username = $row['username'] ?>"><h5 class="card-title"><?php echo $row['name'] ?></h5></a>
 				    <h6 class="card-subtitle mb-2 text-muted"><?php echo '@'.$username ?></h6>
 				    <p class="card-text"><?php echo $row['text'] ?></p>

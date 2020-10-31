@@ -21,9 +21,11 @@
 			        	<li class="nav-item">
 			     			<a class="nav-link" href="/php-youngbook/index.php/">Home</a>
 			      		</li>
+						<?php if(isset($_SESSION['userlogin'])){ ?>
 			      		<li class="nav-item">
 			     			<a class="nav-link" href="/php-youngbook/page/message/index.php/">Message</a>
 			      		</li>
+						<?php } ?>
 			      		<li class="nav-item">
 			        		<a class="nav-link" href="/php-youngbook/page/forum/index.php/">Forum</a>
 			      		</li>

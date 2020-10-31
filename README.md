@@ -39,10 +39,10 @@ Now, you can buy a lot of cool stuff from other users online, we filtered user b
 - ( 27/10/2020 ) - Add functionality who friends and add icon
 - ( 28/10/2020 ) - Updating Readme
 - ( 30/10/2020 ) - Adding update photo function
+- ( 31/10/2020 ) - Dynamic Photo Profile
 
 ### TO DO Next Update
 - Friend Page
-- Dynamic Photo Profile ( Success >> Debugging )
 - Forum Post Friends Timeline
 - Marketplace
 - Add Friend Button

@@ -24,43 +24,44 @@
                     <div class="profile">
                         <div class="row">
                             <div class="col-3">
+                            <?php if(isset($_SESSION['userlogin'])){ if($_SESSION['userlogin'] == $username){ ?><a href="/php-youngbook/page/user/signup_desc.php"> <?php } } else { ?> </a> <?php } ?>
                                 <?php if ($userdata['profile_image'] == 1){ ?>
-                                <a href="/php-youngbook/page/user/signup_desc.php">
                                     <div id="profile-image">
                                         <img src="/php-youngbook/data/image_profile/<?php echo $username ?>.jpg" alt="Profile Picture" id="profile">
                                         <i class="fas fa-pencil-alt fa-3x"></i>
                                     </div>
-                                </a>
                                 <?php } else { ?>
-                                <a href="/php-youngbook/page/user/signup_desc.php">
                                     <div id="profile-image">
                                         <img src="/php-youngbook/data/image_profile/profile_default.png" alt="Profile Picture" id="profile">
                                         <i class="fas fa-pencil-alt"></i>
                                     </div>
-                                </a>
                                 <?php } ?>
+                                </a>
                             </div>
                             <div class="col-9" id="profile-button">
                                 <?php
-                                if($username == $_SESSION['userlogin']){ 
-                                ?>
-                                <div class="float-right">
-                                    <a href="/php-youngbook/page/user/signup_desc.php" class="btn btn-primary">Edit Informasi</a>
-                                    <p>
-                                    <?php
-                                    $sqlfriends = "SELECT `friends` FROM `user_data` WHERE `username` = '$username'";
-                                    $resultfriends = mysqli_query($conn, $sqlfriends);
-                                    if($resultfriends){
-                                        $countfriend = count(explode(", ", mysqli_fetch_assoc($resultfriends)['friends']));
-                                        echo $countfriend . ' Friends';
-                                    } else {
-                                        echo 'No Result';
-                                    }
-                                    ?>
-                                    </p>
-                                </div>
+                                if(isset($_SESSION['userlogin'])){
+                                    if($username == $_SESSION['userlogin']){ ?>
+                                        <div class="float-right">
+                                            <a href="/php-youngbook/page/user/signup_desc.php" class="btn btn-primary">Edit Informasi</a>
+                                            <p>
+                                                <?php
+                                                $sqlfriends = "SELECT `friends` FROM `user_data` WHERE `username` = '$username'";
+                                                $resultfriends = mysqli_query($conn, $sqlfriends);
+                                                if($resultfriends){
+                                                    $countfriend = count(explode(", ", mysqli_fetch_assoc($resultfriends)['friends']));
+                                                    echo $countfriend . ' Friends';
+                                                } else {
+                                                    echo 'No Result';
+                                                }
+                                                ?>
+                                            </p>
+                                        </div>
+                                    <?php } else { ?>
+                                        <a href="/php-youngbook/page/message/chatbox.php?username=<?php echo $username ?>" class="btn btn-success float-right">Kirim Pesan</a>
+                                    <?php } ?>
                                 <?php } else { ?>
-                                    <a href="/php-youngbook/page/message/chatbox.php?username=<?php echo $username ?>" class="btn btn-primary float-right">Kirim Pesan</a>
+                                    <a href="/php-youngbook/page/user/signin.php" class="btn btn-warning float-right">Login untuk dapat terhubung</a>
                                 <?php } ?>
                             </div>
                         </div>
