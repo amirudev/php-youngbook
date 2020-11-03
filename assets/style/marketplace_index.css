@@ -1,0 +1,17 @@
+img {
+    max-height: 200px;
+}
+
+.plus-button {
+    padding: 10px;
+}
+
+.read-button {
+    width: 75%;
+    padding: 10px;
+}
+
+.cart-logo {
+    width: 20%;
+    padding: 10px;
+}

@@ -44,7 +44,7 @@ if(isset($_SESSION['userlogin'])){
         }
     }
     
-    $sql = "UPDATE `user_data` SET `bio` = '$bio', `location` = '$kota_id', `profile_image` = '$isImageExist' WHERE `username` = '$username'";
+    $sql = "UPDATE `user` SET `bio` = '$bio', `location` = '$kota_id', `profile_image` = '$isImageExist' WHERE `username` = '$username'";
     
     if($username){
         if(mysqli_query($conn, $sql)){

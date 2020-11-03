@@ -16,7 +16,7 @@
             <div class="card">
             <?php
             $username = $_GET['username'];
-            $sql = "SELECT * FROM `user_data` WHERE `username` = '$username'";
+            $sql = "SELECT * FROM `user` WHERE `username` = '$username'";
             $userdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
             ?>
                 <img src="/php-youngbook/assets/image/profile_jumbotron.jpg" class="card-img-top" alt="Jumbotron" id="jumbotron">
@@ -46,7 +46,7 @@
                                             <a href="/php-youngbook/page/user/signup_desc.php" class="btn btn-primary">Edit Informasi</a>
                                             <p>
                                                 <?php
-                                                $sqlfriends = "SELECT `friends` FROM `user_data` WHERE `username` = '$username'";
+                                                $sqlfriends = "SELECT `friends` FROM `user` WHERE `username` = '$username'";
                                                 $resultfriends = mysqli_query($conn, $sqlfriends);
                                                 if($resultfriends){
                                                     $countfriend = count(explode(", ", mysqli_fetch_assoc($resultfriends)['friends']));
