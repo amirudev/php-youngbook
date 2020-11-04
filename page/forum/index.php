@@ -27,7 +27,7 @@
 		  	<button type="submit" class="btn btn-primary mb-2">Post</button>
 		</form>
   		<?php
-		$sql = 'SELECT * FROM `forum_global` ORDER BY `id` DESC LIMIT 10';
+		$sql = 'SELECT * FROM `posts` ORDER BY `id` DESC LIMIT 10';
 		$result = mysqli_query($conn, $sql);
 		if (mysqli_num_rows($result) > 0){
 			// output data of each row
