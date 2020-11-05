@@ -13,7 +13,7 @@
   			</button>
   			<nav class="navbar navbar-light" id="navbar">
  				<a class="navbar-brand" href="#">
-    				<span id="navbar-text">Youngbook</span>
+				<i class="fas fa-comment pr-1" style="color: white;"></i><span id="navbar-text">Youngbook</span>
   				</a>
 			</nav>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">

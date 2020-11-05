@@ -25,7 +25,6 @@
 			</div>
 		</div>
 	</div>
-	<?php echo $_SERVER['PHP_SELF'] ?>
 	<?php require './page/components/footer.php'; ?>
 </body>
 </html>

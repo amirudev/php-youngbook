@@ -11,6 +11,7 @@
     require '../functions/mysqliconnect.php';
     require '../functions/marketplace_pickcategoryname.php';
     $id = $_GET['id'];
+    $seller = $_SESSION['userlogin'];
 
     function getData($conn, $id){
         $sql = "SELECT * FROM `items` WHERE `id` = '$id'";
@@ -54,9 +55,8 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                 </div>
                 <div class="form-group">
-                    <?php $seller_id = $product['seller_id']; ?>
                     <button type="submit" class="btn btn-primary float-right">Add New Product</button>
-                    <a href="<?php echo "/php-youngbook/page/functions/marketplace_delete.php?id=$seller_id" ?>" class="btn btn-danger">Delete This Product</a>
+                    <a href="<?php echo "/php-youngbook/page/functions/marketplace_delete.php?id=$id" ?>" class="btn btn-danger">Delete This Product</a>
                 </div>
                 </form>
         </div>

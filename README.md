@@ -42,9 +42,11 @@ Now, you can buy a lot of cool stuff from other users online, we filtered user b
 - ( 31/10/2020 ) - Dynamic Photo Profile
 - ( 01/11/2020 ) - Re-configurating Database ( until 02/11/2020 )
 - ( 03/11/2020 ) - Adding marketplace features
+- ( 04/11/2020 ) - Completing Marketplace features
+- ( 05/11/2020 ) - Debugging marketplace
 
 ### TO DO Next Update
-- Marketplace ( Under Development )
+- Marketplace ( Debugging )
 - Forum Post Friends Timeline
 - Add Friend Button
 - Friend Page

@@ -1,0 +1,23 @@
+#icon {
+    color: grey;
+    vertical-align: middle;
+    padding-bottom: 5px;
+}
+
+.col-3 span {
+    font-size: 20px;
+}
+
+li {
+    list-style-type: none;
+    font-size: 17px;
+}
+
+.icon-follus {
+    padding: 3px;
+    vertical-align: middle;
+}
+
+footer {
+    clear: both;
+}

@@ -1,3 +1,7 @@
+.marketplace-item {
+    float: left;
+}
+
 img {
     max-height: 200px;
 }

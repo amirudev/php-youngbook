@@ -16,7 +16,7 @@
 		$result = mysqli_query($conn, $sql);
 		if (mysqli_num_rows($result) > 0){
 			while ($row = mysqli_fetch_assoc($result)){ ?>
-			<div class="card m-2 float-left" style="width: 18rem;">
+			<div class="card m-2 marketplace-item" style="width: 18rem;">
 				<img src="/php-youngbook/assets/image/profile_jumbotron.jpg" class="card-img-top" alt="...">
 				<div class="card-body">
 					<h5 class="card-title"><?php echo $name = $row['item_name'] ?></h5>
@@ -37,5 +37,6 @@
 		}
 		?>
 	</div>
+	<?php require '../components/footer.php'; ?>
 </body>
 </html>

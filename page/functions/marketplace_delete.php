@@ -1,11 +1,12 @@
 <?php
 require 'mysqliconnect.php';
 require '../components/header.php';
-require 'marketplace_pickusername.php';
+require 'marketplace_deleteusername.php';
 
 $id = $_GET['id'];
 
-$username = pick_username($conn, $id);
+$seller_id = getSellerId($conn, $id);
+$username = getDeleteUsername($conn, $seller_id);
 
 if($username == $_SESSION['userlogin']){
     $sql = "DELETE FROM `items` WHERE `id` = '$id'";
