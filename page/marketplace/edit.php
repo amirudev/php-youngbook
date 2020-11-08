@@ -23,10 +23,14 @@
     <div class="container">
         <div class="m-2">
             <h2>Update Your Products...</h2>
-            <form action="/php-youngbook/page/functions/marketplace_new.php" method="post">
+            <form action="/php-youngbook/page/functions/marketplace_edit.php" method="post" enctype="multipart/form-data">
+                <input type="text" name="id" value="<?php echo $product['id'] ?>" hidden>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Product Name</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="<?php echo $product['item_name'] ?>">
+                    <label for="exampleFormControlSelect1">Nama Produk dan Foto Produk</label>
+                    <div class="input-group-prepend">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Nama Produk" value="<?php echo $product['item_name'] ?>">
+                        <div class="photo-upload input-group-text"><input type="file" name="product_photo">Upload Gambar Produk</div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Category</label>

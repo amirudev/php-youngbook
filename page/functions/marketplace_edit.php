@@ -1,15 +1,13 @@
 <?php
 require 'mysqliconnect.php';
 require 'marketplace_pickid.php';
+
 session_start();
 
+$id = $_POST['id'];
 $name = $_POST['name'];
 $category = $_POST['category'];
-if(preg_match("/[0-9]/", $_POST['price'])){
-    $price = $_POST['price'];
-} else {
-    echo "price invalid";
-}
+$price = $_POST['price'];
 $description = $_POST['description'];
 $seller_id = pick_id($conn);
 
@@ -40,6 +38,8 @@ if($_FILES['product_photo']['size'] == 0 && $_FILES['product_photo']['error'] ==
     // Check if $uploadOk is set to 0 by an error
     if ($isImageOk == 0) {
         echo "Sorry, your file was not uploaded.";
+        $isImageExist = 0;
+        $randNumber = 0;
     // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES['product_photo']['tmp_name'], $target_file_name)) {
@@ -51,12 +51,14 @@ if($_FILES['product_photo']['size'] == 0 && $_FILES['product_photo']['error'] ==
         }
     }
 }
+print_r($_FILES['product_photo']);
 
-$sql = "INSERT `items` (`id`, `seller_id`, `item_name`, `item_description`, `item_price`, `item_category`, `is_image_exist`, `image_file`) VALUES (NULL, '$seller_id', '$name', '$description', '$price', '$category', '$isImageExist', '$randNumber')";
+$sql = "UPDATE `items` SET `seller_id`='$seller_id',`item_name`='$name',`item_description`='$description',`item_price`='$price',`item_category`='$category',`is_image_exist`='$isImageExist',`image_file`='$image_file' WHERE `id` = '$id'";
 
 if (mysqli_query($conn, $sql)){
     header('Location: /php-youngbook/page/marketplace/index.php');
 } else {
     echo 'Something went wrong' . mysqli_error($conn);;
 }
+?>
 ?>

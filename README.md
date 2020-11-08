@@ -44,6 +44,7 @@ Now, you can buy a lot of cool stuff from other users online, we filtered user b
 - ( 03/11/2020 ) - Adding marketplace features
 - ( 04/11/2020 ) - Completing Marketplace features
 - ( 05/11/2020 ) - Debugging marketplace
+- ( 07/11/2020 ) - Adding features on marketplace
 
 ### TO DO Next Update
 - Marketplace ( Debugging )

@@ -1,8 +1,8 @@
 <?php 
 require 'mysqliconnect.php';
-$name = $_POST['name'];
-$username = $_POST['username'];
-$password = $_POST['password'];
+$name = htmlspecialchars($_POST['name']);
+$username = htmlspecialchars($_POST['username']);
+$password = htmlspecialchars($_POST['password']);
 
 $sql = "INSERT INTO `user` (`username`, `name`, `password`) VALUES ('$username', '$name', '$password');";
 

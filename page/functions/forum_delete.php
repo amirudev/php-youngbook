@@ -2,7 +2,7 @@
     $id = $_GET['id'];
 
     require 'mysqliconnect.php';
-    $sql = "DELETE FROM `forum_global` WHERE `id` = '$id'";
+    $sql = "DELETE FROM `posts` WHERE `id` = '$id'";
 
     if(mysqli_query($conn, $sql)){
         echo "SUCCESS";

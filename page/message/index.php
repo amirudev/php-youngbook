@@ -9,7 +9,7 @@
 	require '/opt/lampp/htdocs/php-youngbook/page/functions/message_picktime.php';
 	?>
 	<link rel="stylesheet" href="/php-youngbook/assets/style/message.css">
-	<div class="container">
+	<div class="container m-5">
 		<h1>Message</h1>
 		<?php
 		if(isset($_SESSION['userlogin'])){

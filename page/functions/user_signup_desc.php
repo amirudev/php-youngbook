@@ -3,7 +3,7 @@ session_start();
 if(isset($_SESSION['userlogin'])){
     require 'mysqliconnect.php';
     if(isset($_POST['bio'])){
-        $bio = $_POST['bio'];
+        $bio = htmlspecialchars($_POST['bio']);
     }
     if(isset($_POST['kota_kabupaten'])){
         $kota_id = $_POST['kota_kabupaten'];

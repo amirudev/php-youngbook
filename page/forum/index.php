@@ -5,7 +5,7 @@
 </head>
 <body>
 	<?php require '../components/header.php'; ?>
-	<div class="container mt-1">
+	<div class="container m-5">
 		<h1>Forum</h1>
 		<?php require '../functions/mysqliconnect.php';
 		if(isset($message) || isset($_COOKIE['messagecookie'])) {
@@ -44,7 +44,7 @@
 					<?php } ?>
 				    <a href="/php-youngbook/page/profile/index.php?username=<?php echo $username = $row['username'] ?>"><h5 class="card-title"><?php echo $row['name'] ?></h5></a>
 				    <h6 class="card-subtitle mb-2 text-muted"><?php echo '@'.$username ?></h6>
-				    <p class="card-text"><?php echo $row['text'] ?></p>
+				    <p class="card-text"><?php echo strval($row['text']) ?></p>
 					<?php if(isset($_SESSION['userlogin'])){ if($_SESSION['userlogin'] == $username){ ?>
 						<a href='<?php echo "/php-youngbook/page/forum/edit.php/?id=$userid" ?>' class="card-link" >Edit</a>
 						<a href='<?php echo "/php-youngbook/page/functions/forum_delete.php/?id=$userid" ?>' class="card-link">Delete</a>

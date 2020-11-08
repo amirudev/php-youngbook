@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/php-youngbook/assets/style/marketplace_form.css">
 </head>
 <body>
     <?php require '../components/header.php'; ?>
@@ -11,10 +12,13 @@
     <div class="container">
         <div class="m-2">
             <h2>Sell things here.</h2>
-            <form action="/php-youngbook/page/functions/marketplace_new.php" method="post">
+            <form action="/php-youngbook/page/functions/marketplace_new.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Product Name</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="name">
+                    <label for="exampleFormControlSelect1">Nama Produk dan Foto Produk</label>
+                    <div class="input-group-prepend">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Nama Produk">
+                        <div class="photo-upload input-group-text"><input type="file" name="product_photo">Upload Gambar Produk</div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Category</label>

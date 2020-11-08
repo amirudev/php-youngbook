@@ -4,7 +4,7 @@ session_start();
 
 $username = $_SESSION['userlogin'];
 echo $username;
-$message = $_POST["message"];
+$message = htmlspecialchars($_POST["message"]);
 $receiver = $_POST["receiver"];
 $sql = "INSERT INTO `messages` (`id`, `username`, `message`, `timestamp`, `receiver`) VALUES (NULL, '$username', '$message', NULL, '$receiver')";
 

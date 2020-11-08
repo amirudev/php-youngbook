@@ -4,7 +4,7 @@ session_start();
 
 if(isset($_SESSION['userlogin'])){
 	$username = $_POST['username'];
-	$text = $_POST['text'];
+	$text = htmlspecialchars($_POST['text']);
 
 	if(strlen($text) == 0){
 		setcookie('messagecookie', 'Postingan harus memiliki isi', time()+60, '/');
@@ -12,7 +12,7 @@ if(isset($_SESSION['userlogin'])){
 		header('Location: /php-youngbook/page/forum/index.php');die();
 	} else {
 		function findName($username, $conn){
-			$sql = "SELECT `name` FROM `user_data` WHERE username='$username';";
+			$sql = "SELECT `name` FROM `users` WHERE username='$username';";
 			json_encode($result = mysqli_query($conn, $sql));
 			$result = mysqli_fetch_assoc($result);
 			return $result['name'];
@@ -20,7 +20,7 @@ if(isset($_SESSION['userlogin'])){
 		
 		$name = findName($username, $conn);
 		
-		$sql = "INSERT INTO `forum_global` (`id`, `username`, `name`, `text`) VALUES (NULL, '$username', '$name', '$text');";
+		$sql = "INSERT INTO `posts` (`id`, `username`, `name`, `text`) VALUES (NULL, '$username', '$name', '$text');";
 		
 		if (mysqli_query($conn, $sql)) {
 			$_COOKIE['message'] = "NEW RECORD SAVED SUCCESSFULLY";
