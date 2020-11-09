@@ -1,8 +1,14 @@
-<!DOCTYPE html>
+<!-- 
+	Author : Wahyu Amirulloh
+	Name : PHP-Youngbook
+	Year : 2020
+	Github : github.com/wahyuamirulloh
+ -->
+ <!DOCTYPE html>
 <html>
 <head>
 	<title>Register Youngbook</title>
-	<!-- <link rel="stylesheet" type="text/css" href="../../assets/style/signup.css"> -->
+	<link rel="stylesheet" type="text/css" href="../../assets/style/signup.css">
 </head>
 <body>
 <?php require '/opt/lampp/htdocs/php-youngbook/page/components/header.php'; ?>

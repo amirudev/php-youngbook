@@ -1,3 +1,9 @@
+<!-- 
+	Author : Wahyu Amirulloh
+	Name : PHP-Youngbook
+	Year : 2020
+	Github : github.com/wahyuamirulloh
+ -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,17 +30,21 @@
 				<?php } ?>
 				<div class="card-body">
 					<h5 class="card-title"><?php echo $name = $row['item_name'] ?></h5>
-					<h6 class="card-subtitle mb-2 text-black">Rp<?php echo $price = $row['item_price'] ?></h6>
-					<a href="/php-youngbook/page/marketplace/bacaselengkapnya.php?id=<?php echo $row['id'] ?>" class="btn btn-primary float-left read-button">Read More</a>
-					<?php
-					$seller_name = pick_username($conn, $row['seller_id']);
-					if ($seller_name == $_SESSION['userlogin']){
-						$id = $row['id'];
-						$category = $row['item_category']; ?>
-						<a href="<?php echo "/php-youngbook/page/marketplace/edit.php?id=$id"?>" class="btn btn-warning float-right cart-logo"><i class="fas fa-pencil-alt fa-1x"></i></a>
-					 <?php } else { ?>
-						<a href="#" class="btn btn-success float-right cart-logo"><i class="fas fa-shopping-cart fa-1x"></i></a>
-					 <?php } ?>
+					<div class="control-item">
+						<h6 class="card-subtitle mb-2 text-black">Rp<?php echo $price = $row['item_price'] ?></h6>
+						<a href="/php-youngbook/page/marketplace/bacaselengkapnya.php?id=<?php echo $row['id'] ?>" class="btn btn-primary float-left read-button">Read More</a>
+						<?php
+						$seller_name = pick_username($conn, $row['seller_id']);
+						if(isset($_SESSION['userlogin'])){
+							if ($seller_name == $_SESSION['userlogin']){
+								$id = $row['id'];
+								$category = $row['item_category']; ?>
+								<a href="<?php echo "/php-youngbook/page/marketplace/edit.php?id=$id"?>" class="btn btn-warning float-right cart-logo"><i class="fas fa-pencil-alt fa-1x"></i></a>
+							<?php } else { ?>
+								<a href="#" class="btn btn-success float-right cart-logo"><i class="fas fa-shopping-cart fa-1x"></i></a>
+							<?php } ?>
+						<?php } ?>
+					</div>
 				</div>
 			</div>
 			<?php }

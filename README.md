@@ -18,9 +18,12 @@ Now, you can buy a lot of cool stuff from other users online, we filtered user b
 
 > This is just basic information of this open source app, i will update soon as possible, the project is under development and we are don't open beta tester right now, for further information you can visit me on linkedin.com/wahyuamirulloh 
 
+## How to try on my computer ?
+
+
 ## Changelog
 > Status : Under Development
-> Version : 0.5.7 ( 40% )
+> Version : 0.6 ( 50% ) First Alpha Access
 ### Changelog :
 - ( 08/10/2020 ) - Improving Header and Relocate folder files
 - ( 10/10/2020 ) - Developing signup page
@@ -45,6 +48,7 @@ Now, you can buy a lot of cool stuff from other users online, we filtered user b
 - ( 04/11/2020 ) - Completing Marketplace features
 - ( 05/11/2020 ) - Debugging marketplace
 - ( 07/11/2020 ) - Adding features on marketplace
+- ( 08/11/2020 ) - Little Improvement and 
 
 ### TO DO Next Update
 - Marketplace ( Debugging )
