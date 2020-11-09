@@ -11,15 +11,15 @@
 </head>
 <body class="bg-light">
 	<?php 
-	require '/opt/lampp/htdocs/php-youngbook/page/components/header.php';
-	require '/opt/lampp/htdocs/php-youngbook/page/functions/message_picktime.php';
+	require '../components/header.php';
+	require '../functions/message_picktime.php';
 	?>
 	<link rel="stylesheet" href="/php-youngbook/assets/style/message.css">
 	<div class="container m-5">
 		<h1>Message</h1>
 		<?php
 		if(isset($_SESSION['userlogin'])){
-			require '/opt/lampp/htdocs/php-youngbook/page/functions/mysqliconnect.php';
+			require '../functions/mysqliconnect.php';
 			$myuser = $_SESSION['userlogin'];
 			$sql = "SELECT * FROM ( SELECT * FROM messages WHERE `receiver` = '$myuser' ORDER BY `id` DESC LIMIT 18446744073709551615 ) AS sub GROUP BY sub.`username` ORDER BY `id` DESC"; // ROMBAK TOTAL, TIAP USER PUNYA TABEL SENDIRI, DI DATABASE php_youngbook
 			$result = mysqli_query($conn, $sql);

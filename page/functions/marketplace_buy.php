@@ -15,6 +15,8 @@ $sql_transaction = "INSERT INTO `transactions` (`id`, `buyer_id`, `seller_id`, `
 
 if(mysqli_query($conn, $sql_transaction)){
     if(mysqli_query($conn, $sql_message)){
+        $sql_message = "INSERT INTO `messages` (`id`, `username`, `message`, `receiver`) VALUES (NULL, '$buyer', 'Halo, Aku mau beli ini dong', '$seller')";
+        mysqli_query($conn, $sql_message);
         header("Location: /php-youngbook/page/message/chatbox.php?username=$seller");
     } else {
         echo mysqli_error($conn);

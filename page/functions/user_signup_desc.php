@@ -11,7 +11,7 @@ if(isset($_SESSION['userlogin'])){
     $username = $_SESSION['userlogin'];
     
     if(isset($_FILES['profilphoto'])){
-        $target_dir = "/opt/lampp/htdocs/php-youngbook/data/image_profile/";
+        $target_dir = "../../data/image_profile/";
         $target_file_name = $target_dir . $username;
         $imageFileType = $_FILES['profilphoto']['type'];
         

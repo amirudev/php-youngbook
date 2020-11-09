@@ -14,10 +14,10 @@
 </head>
 <body>
     <?php 
-    require '/opt/lampp/htdocs/php-youngbook/page/components/header.php';
-    require '/opt/lampp/htdocs/php-youngbook/page/functions/mysqliconnect.php';
-    require '/opt/lampp/htdocs/php-youngbook/page/functions/marketplace_pickcategoryname.php';
-    require '/opt/lampp/htdocs/php-youngbook/page/functions/marketplace_pickname.php';
+    require '../components/header.php';
+    require '../functions/mysqliconnect.php';
+    require '../functions/marketplace_pickcategoryname.php';
+    require '../functions/marketplace_pickname.php';
     $product_id = $_GET['id'];
     $sql_product = "SELECT * FROM `items` WHERE `id` = '$product_id'";
     $product = mysqli_fetch_assoc(mysqli_query($conn, $sql_product));
@@ -30,7 +30,7 @@
     </div>
     <div class="content">
         <div class="product row bg-light m-3">
-            <img src="/php-youngbook/assets/data/marketplace_image/default.jpg" class="col-2 m-3">
+            <img src="\php-youngbook\data\marketplace_image\default.jpg" class="col-2 m-3">
             <div class="col-9 m-3">
                 <h2><?php echo $product['item_name'] ?></h2>
                 <p>Rating Produk : * * * * *</p>

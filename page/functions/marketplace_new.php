@@ -17,7 +17,7 @@ if($_FILES['product_photo']['size'] == 0 && $_FILES['product_photo']['error'] ==
     $isImageExist = 0;
     $randNumber = 0;
 } else {
-    $target_dir = "/opt/lampp/htdocs/php-youngbook/data/marketplace_image/";
+    $target_dir = "../../data/marketplace_image/";
     $randNumber = rand(1000, 9999);
     $target_file_name = $target_dir . $randNumber;
     $imageFileType = $_FILES['product_photo']['type'];

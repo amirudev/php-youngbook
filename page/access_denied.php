@@ -6,7 +6,7 @@
     <title>ACCESS DENIED</title>
 </head>
 <body>
-    <?php require '/opt/lampp/htdocs/php-youngbook/page/components/header.php' ?>
+    <?php require 'components/header.php' ?>
     <div class="card">
         <div class="container">
             <div class="card-header">

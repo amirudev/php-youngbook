@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="../../assets/style/signup.css">
 </head>
 <body>
-<?php require '/opt/lampp/htdocs/php-youngbook/page/components/header.php'; ?>
+<?php require '../components/header.php'; ?>
 <div class="container">
 	<div class="row mt-5" id="form">
 		<div class="col-xl-6">
