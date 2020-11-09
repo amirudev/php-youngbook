@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Marketplace - Youngbook</title>
 </head>
 <body>
 	<?php 

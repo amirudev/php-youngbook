@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Lengkapi data kamu !</title>
     <link rel="stylesheet" href="/php-youngbook/assets/style/signup_desc.css">
 </head>
 <body>

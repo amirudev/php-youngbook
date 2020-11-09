@@ -2,6 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="/php-youngbook/assets/style/forum_index.css">
+	<title>Forum - Youngbook</title>
 </head>
 <body>
 	<?php require '../components/header.php'; ?>

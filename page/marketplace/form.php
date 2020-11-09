@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jual barangmu di Youngbook</title>
     <link rel="stylesheet" href="/php-youngbook/assets/style/marketplace_form.css">
 </head>
 <body>

@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+	<title>Kotak Pesan - Youngbook</title>
 </head>
 <body class="bg-light">
 	<?php 
