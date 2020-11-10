@@ -1,5 +1,5 @@
 <?php
-require '/opt/lampp/htdocs/php-youngbook/page/functions/mysqliconnect.php';
+require 'mysqliconnect.php';
 session_start();
 
 $username = $_SESSION['userlogin'];

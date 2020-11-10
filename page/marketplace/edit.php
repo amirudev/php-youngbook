@@ -65,7 +65,7 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary float-right">Add New Product</button>
+                    <button type="submit" class="btn btn-primary float-right">Edit This Product</button>
                     <a href="<?php echo "/php-youngbook/page/functions/marketplace_delete.php?id=$id" ?>" class="btn btn-danger">Delete This Product</a>
                 </div>
                 </form>

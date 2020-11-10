@@ -38,7 +38,7 @@
 				<div class="card m-2">
 				  <div class="card-body">
 					<?php $imageURL = "/php-youngbook/data/image_profile/" . $row['username'] . ".jpg"; ?>
-				  	<?php if(file_exists("/opt/lampp/htdocs" . $imageURL)){ ?>
+				  	<?php if(file_exists($imageURL)){ ?>
 				  	<img src="<?php echo $imageURL ?>">
 					<?php } else { ?>
 						<img src="/php-youngbook/data/image_profile/profile_default.jpg">

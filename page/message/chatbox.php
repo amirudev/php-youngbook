@@ -14,9 +14,9 @@
 </head>
 <body>
     <?php
-    require '/opt/lampp/htdocs/php-youngbook/page/components/header.php';
-    require '/opt/lampp/htdocs/php-youngbook/page/functions/mysqliconnect.php';
-    require '/opt/lampp/htdocs/php-youngbook/page/functions/message_pickname.php';
+    require '../components/header.php';
+    require '../functions/mysqliconnect.php';
+    require '../functions/message_pickname.php';
     if(isset($_SESSION['userlogin'])){
     $user = $_SESSION['userlogin'];
     $senderusername = $_GET['username'];
@@ -90,7 +90,7 @@
             </div>
         </div>
             <div class="form-group">
-                <form action="/php-youngbook/page/functions/message_send.php" method="post">
+                <form action="../functions/message_send.php" method="post">
                     <input type="text" name="receiver" value="<?php echo $senderusername ?>" readonly hidden>
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Ketik pesan disini ..." name="message">

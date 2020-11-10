@@ -14,8 +14,8 @@
 </head>
 <body>
     <?php
-    require '/opt/lampp/htdocs/php-youngbook/page/components/header.php';
-    require '/opt/lampp/htdocs/php-youngbook/page/functions/mysqliconnect.php';
+    require '../components/header.php';
+    require '../functions/mysqliconnect.php';
     ?>
     <div class="bg-light">
         <div class="container p-5">
