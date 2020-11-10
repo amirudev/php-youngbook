@@ -18,41 +18,81 @@ Now, you can buy a lot of cool stuff from other users online, we filtered user b
 
 > This is just basic information of this open source app, i will update soon as possible, the project is under development and we are don't open beta tester right now, for further information you can visit me on linkedin.com/wahyuamirulloh 
 
-## How to try on my computer ?
+### Gallery View
+![Index Page](screenshot/youngbook-login.png)
+> Selamat datang Selamat Bergabung, silahkan login atau register terlebih dahulu, kami sudah punya akun untuk langsung kamu pakai !
 
+Username       | Password
+---------------|----------------
+wahyuamirulloh | wahyuamirulloh
+ahamdsaugi     | ahmadsaugi
+
+![Index Page](screenshot/youngbook-forum.png)
+> Selamat Menggunakan ! Kamu bisa buat artikel kamu disini, buat orang lain tertarik mengunjungi profilmu dan mulai berinteraksi dengan orang !
+
+![Index Page](screenshot/youngbook-marketplace.png)
+> Ayo beli barang dari sesama pengguna Youngbook, Coba tekan icon keranjang belanja, maka kamu akan langsung berinteraksi dengan penjual !
+
+![Index Page](screenshot/youngbook-message.png)
+> Berinteraksi sekarang dan hubungkan duniamu ! Selamat menggunakan
+
+## How to Install ?
+Tutorial membuka youngbook di Localhost komputermu
+1. Clone Repository ini ke Komputermu
+  1. Buka Command Prompt
+  2. Pindah ke directory Xampp / Lampp kamu atau bisa dengan mudah salin saja perintah ini di Command Prompt berdasarkan sistem operasi kamu
+  
+  Windows            | Linux
+  -------------------|---------------------
+  cd C:/xampp/htdocs | cd /opt/lampp/htdocs
+  
+  3. Copy perintah ini di Command Prompt
+  ```bash
+  git clone https://github.com/wahyuamirulloh/php-youngbook.git
+  cd php-youngbook
+  ```
+  4. Buka Xampp / Lampp mu dan start Apache Web Server dan MySQL Database
+  5. Buka browser kamu dan ketik ini di address bar kamu
+  ``` Localhost:<port-kamu>/php-youngbook ```
+  
+  Selamat, kamu telah berhasil membukanya
+
+2. Instalasi Database
+  1. Buka tab baru, lalu ketik ini di address bar kamu
+  ``` Localbost:<port-kamu>/phpmyadmin ```
+  2. Buat database baru dengan Nama Basis Data 'php-youngbook'
+  3. Klik tab Impor pada phpmyadmin
+  4. Pada kolom 'Berkas Untuk Impor', klik 'Choose File' pada 'Telusuri Komputer Anda'
+  5. Ikuti direktori ini untuk menemukan file php-youngbook
+  
+  Windows                       | Linux
+  ------------------------------|--------------------------------
+  C:/xampp/htdocs/php-youngbook | /opt/lampp/htdocs/php-youngbook
+  
+  6. Masuk ke folder sql dan pilih file 'php-youngbook.sql'
+  7. Tunggu hingga proses selesai dan beberapa tabel selesai dibuat
+  8. Selamat, Kamu sudah mulai bisa menggunakannya !
+  
+3. Jalankan Website
+  Buka browser kamu dan ketik ini di address bar kamu
+  ``` Localhost:<port-kamu>/php-youngbook ```
+  
+  *Pastikan kamu telah mengaktifkan Apache Web Server dan MySQL Database*
+  *Hubungi saya apabila menemukan kesalahan atau kesulitan dalam menggunakan*
+  
+  * Facebook :  Wahyu Amirulloh
+  * Instagram : @wahyuamirulloh
+  * GitHub : github.com/wahyuamirulloh
+  * LinkedIn : linkedin.com/in/wahyuamirulloh
 
 ## Changelog
 > Status : Under Development
 > Version : 0.6.1 ( 50% ) First Alpha Access
 ### Changelog :
-- ( 08/10/2020 ) - Improving Header and Relocate folder files
-- ( 10/10/2020 ) - Developing signup page
-- ( 13/10/2020 ) - Add functionality Register and Signin
-- ( 15/10/2020 ) - Fix header, fix session, cookie. Fix bug on functions and improving security
-- ( 16/10/2020 ) - Improving security, add edit and delete features and bug fixing
-- ( 17/10/2020 ) - Code Efficienty on Header
-- ( 18/10/2020 ) - Developing message
-- ( 19/10/2020 ) - Add functionality messaging
-- ( 20/10/2020 ) - Bug fixing on messaging
-- ( 21/10/2020 ) - Add Profile Page
-- ( 22/10/2020 ) - Add Signup_Desc page
-- ( 23/10/2020 ) - Try add functionality on signup_desc
-- ( 24/10/2020 ) - Code efficiency and restructuring some code
-- ( 25/10/2020 ) - Fixing bug on signup_desc and add functionality
-- ( 27/10/2020 ) - Add functionality who friends and add icon
-- ( 28/10/2020 ) - Updating Readme
-- ( 30/10/2020 ) - Adding update photo function
-- ( 31/10/2020 ) - Dynamic Photo Profile
-- ( 01/11/2020 ) - Re-configurating Database ( until 02/11/2020 )
-- ( 03/11/2020 ) - Adding marketplace features
-- ( 04/11/2020 ) - Completing Marketplace features
-- ( 05/11/2020 ) - Debugging marketplace
-- ( 07/11/2020 ) - Adding features on marketplace
-- ( 08/11/2020 ) - Little Improvement
-- ( 09/11/2020 ) - Export SQL and make integration marketplace and message
+- ( 08/11/2020 - 03/11/2020 ) - Development on Forum, Messages and Profile
+- ( 04/11/2020 - 09/11/2020 ) - Development on Marketplace
 
 ### TO DO Next Update
-- Marketplace ( Debugging )
 - Forum Post Friends Timeline
 - Add Friend Button
 - Friend Page
