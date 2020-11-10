@@ -14,6 +14,7 @@ $seller_id = pick_id($conn);
 if($_FILES['product_photo']['size'] == 0 && $_FILES['product_photo']['error'] == 4){
     $isImageExist = 0;
     $randNumber = 0;
+    $image_file = 0;
 } else {
     $target_dir = "../../data/marketplace_image/";
     $randNumber = rand(1000, 9999);
