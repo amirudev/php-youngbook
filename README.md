@@ -38,7 +38,7 @@ ahamdsaugi     | ahmadsaugi
 
 ## How to Install ?
 Tutorial membuka youngbook di Localhost komputermu
-1. Clone Repository ini ke Komputermu
+#### Clone Repository ini ke Komputermu
   1. Buka Command Prompt
   2. Pindah ke directory Xampp / Lampp kamu atau bisa dengan mudah salin saja perintah ini di Command Prompt berdasarkan sistem operasi kamu
   
@@ -57,7 +57,7 @@ Tutorial membuka youngbook di Localhost komputermu
   
   Selamat, kamu telah berhasil membukanya
 
-2. Instalasi Database
+#### Instalasi Database
   1. Buka tab baru, lalu ketik ini di address bar kamu
   ``` Localbost:<port-kamu>/phpmyadmin ```
   2. Buat database baru dengan Nama Basis Data 'php-youngbook'
@@ -73,7 +73,7 @@ Tutorial membuka youngbook di Localhost komputermu
   7. Tunggu hingga proses selesai dan beberapa tabel selesai dibuat
   8. Selamat, Kamu sudah mulai bisa menggunakannya !
   
-3. Jalankan Website
+#### Jalankan Website
   Buka browser kamu dan ketik ini di address bar kamu
   ``` Localhost:<port-kamu>/php-youngbook ```
   
