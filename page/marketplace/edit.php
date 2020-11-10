@@ -31,6 +31,7 @@
             <h2>Update Your Products...</h2>
             <form action="/php-youngbook/page/functions/marketplace_edit.php" method="post" enctype="multipart/form-data">
                 <input type="text" name="id" value="<?php echo $product['id'] ?>" hidden>
+                <input type="text" name="imageURL" value="<?php echo $product['image_file'] ?>" hidden>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Nama Produk dan Foto Produk</label>
                     <div class="input-group-prepend">
