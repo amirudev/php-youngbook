@@ -18,11 +18,8 @@
     require '../functions/mysqliconnect.php';
     require '../functions/marketplace_pickcategoryname.php';
     require '../functions/marketplace_pickname.php';
-<<<<<<< HEAD
     require '../functions/marketplace_pickusername.php';
 
-=======
->>>>>>> 2429e7dd40d4f60af51d9ac16e0566739325a890
     $product_id = $_GET['id'];
     $sql_product = "SELECT * FROM `items` WHERE `id` = '$product_id'";
     $product = mysqli_fetch_assoc(mysqli_query($conn, $sql_product));
