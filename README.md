@@ -23,7 +23,7 @@ Now, you can buy a lot of cool stuff from other users online, we filtered user b
 
 ## Changelog
 > Status : Under Development
-> Version : 0.6 ( 50% ) First Alpha Access
+> Version : 0.6.1 ( 50% ) First Alpha Access
 ### Changelog :
 - ( 08/10/2020 ) - Improving Header and Relocate folder files
 - ( 10/10/2020 ) - Developing signup page
@@ -48,7 +48,8 @@ Now, you can buy a lot of cool stuff from other users online, we filtered user b
 - ( 04/11/2020 ) - Completing Marketplace features
 - ( 05/11/2020 ) - Debugging marketplace
 - ( 07/11/2020 ) - Adding features on marketplace
-- ( 08/11/2020 ) - Little Improvement and 
+- ( 08/11/2020 ) - Little Improvement
+- ( 09/11/2020 ) - Export SQL and make integration marketplace and message
 
 ### TO DO Next Update
 - Marketplace ( Debugging )

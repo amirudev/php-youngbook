@@ -35,11 +35,53 @@
                 while ($row = mysqli_fetch_assoc($result)){
                     if ($row["receiver"] == $user && $row["username"] == $senderusername){ ?>
                         <div class="alert alert-secondary w-75 float-left" role="alert">
-                            <?php echo $row["message"] ?>
+                            <?php if(substr($row['message'], 0, 10) == "product_id"){
+                                $id_produk = substr($row['message'], 11, (strlen($row['message']) - 11));
+                                $sql_item = "SELECT * FROM `items` WHERE `id` = '$id_produk'";
+                                $result_item = mysqli_fetch_assoc(mysqli_query($conn, $sql_item));
+                                ?>
+                                <div class="row" id="item_share">
+                                    <div class="col-2">
+                                        <?php if($result_item['is_image_exist'] == 1){ ?>
+                                            <img src="/php-youngbook/data/marketplace_image/<?php echo $result_item['image_file'] ?>.jpg" id="image_item_share">
+                                        <?php } else { ?>
+                                            <img src="/php-youngbook/data/marketplace_image/default.jpg" class="image_item_share">
+                                        <?php } ?>
+                                    </div>
+                                    <div class="col-10">
+                                        <p><?php echo $result_item['item_name'] ?></p>
+                                        <p><?php echo $result_item['item_price'] ?></p>
+                                    </div>
+                                </div>
+                                <?php
+                            } else {
+                                echo $row["message"];
+                            } ?>
                         </div>
                     <?php } else if ($row["receiver"] == $senderusername && $row["username"] == $user){  ?>
                         <div class="alert alert-success w-75 float-right" role="alert">
-                            <?php echo $row["message"] ?>
+                        <?php if(substr($row['message'], 0, 10) == "product_id"){
+                                $id_produk = substr($row['message'], 11, (strlen($row['message']) - 11));
+                                $sql_item = "SELECT * FROM `items` WHERE `id` = '$id_produk'";
+                                $result_item = mysqli_fetch_assoc(mysqli_query($conn, $sql_item));
+                                ?>
+                                <div class="row" id="item_share">
+                                    <div class="col-2">
+                                        <?php if($result_item['is_image_exist'] == 1){ ?>
+                                            <img src="/php-youngbook/data/marketplace_image/<?php echo $result_item['image_file'] ?>.jpg" id="image_item_share">
+                                        <?php } else { ?>
+                                            <img src="/php-youngbook/data/marketplace_image/default.jpg" class="image_item_share">
+                                        <?php } ?>
+                                    </div>
+                                    <div class="col-10">
+                                        <p><?php echo $result_item['item_name'] ?></p>
+                                        <p><?php echo $result_item['item_price'] ?></p>
+                                    </div>
+                                </div>
+                                <?php
+                            } else {
+                                echo $row["message"];
+                            } ?>
                         </div>
                     <?php }
                 }

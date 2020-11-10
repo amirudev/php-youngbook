@@ -14,3 +14,9 @@ button#chatbox-send {
     border: 0;
     padding: 0;
 }
+
+img.image_item_share {
+    width: 110px;
+    height: 80px;
+    object-fit: cover;
+}

@@ -27,7 +27,7 @@
 				<?php if($row['is_image_exist'] == 1){ ?>
 				<img src="/php-youngbook/data/marketplace_image/<?php echo $row['image_file'] ?>.jpg" class="card-img-top" alt="...">
 				<?php } else { ?>
-				<img src="/php-youngbook/assets/image/profile_jumbotron.jpg" class="card-img-top" alt="...">
+				<img src="/php-youngbook/data/marketplace_image/default.jpg" class="card-img-top" alt="...">
 				<?php } ?>
 				<div class="card-body">
 					<h5 class="card-title"><?php echo $name = $row['item_name'] ?></h5>
@@ -35,14 +35,16 @@
 						<h6 class="card-subtitle mb-2 text-black">Rp<?php echo $price = $row['item_price'] ?></h6>
 						<a href="/php-youngbook/page/marketplace/bacaselengkapnya.php?id=<?php echo $row['id'] ?>" class="btn btn-primary float-left read-button">Read More</a>
 						<?php
-						$seller_name = pick_username($conn, $row['seller_id']);
+						$seller_id = $row['seller_id'];
+						$seller_name = pick_username($conn, $seller_id);
 						if(isset($_SESSION['userlogin'])){
 							if ($seller_name == $_SESSION['userlogin']){
 								$id = $row['id'];
 								$category = $row['item_category']; ?>
 								<a href="<?php echo "/php-youngbook/page/marketplace/edit.php?id=$id"?>" class="btn btn-warning float-right cart-logo"><i class="fas fa-pencil-alt fa-1x"></i></a>
-							<?php } else { ?>
-								<a href="#" class="btn btn-success float-right cart-logo"><i class="fas fa-shopping-cart fa-1x"></i></a>
+							<?php } else {
+								$id = $row['id']; ?>
+								<a href="<?php echo "/php-youngbook/page/functions/marketplace_buy.php?id=$id&seller=$seller_id" ?>" class="btn btn-success float-right cart-logo"><i class="fas fa-shopping-cart fa-1x"></i></a>
 							<?php } ?>
 						<?php } ?>
 					</div>

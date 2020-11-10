@@ -22,7 +22,7 @@
             <div class="card">
             <?php
             $username = $_GET['username'];
-            $sql = "SELECT * FROM `user` WHERE `username` = '$username'";
+            $sql = "SELECT * FROM `users` WHERE `username` = '$username'";
             $userdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
             ?>
                 <img src="/php-youngbook/assets/image/profile_jumbotron.jpg" class="card-img-top" alt="Jumbotron" id="jumbotron">
@@ -38,7 +38,7 @@
                                     </div>
                                 <?php } else { ?>
                                     <div id="profile-image">
-                                        <img src="/php-youngbook/data/image_profile/profile_default.png" alt="Profile Picture" id="profile">
+                                        <img src="/php-youngbook/data/image_profile/profile_default.jpg" alt="Profile Picture" id="profile">
                                         <i class="fas fa-pencil-alt"></i>
                                     </div>
                                 <?php } ?>
@@ -52,7 +52,7 @@
                                             <a href="/php-youngbook/page/user/signup_desc.php" class="btn btn-primary">Edit Informasi</a>
                                             <p>
                                                 <?php
-                                                $sqlfriends = "SELECT `friends` FROM `user` WHERE `username` = '$username'";
+                                                $sqlfriends = "SELECT `friends` FROM `users` WHERE `username` = '$username'";
                                                 $resultfriends = mysqli_query($conn, $sqlfriends);
                                                 if($resultfriends){
                                                     $countfriend = count(explode(", ", mysqli_fetch_assoc($resultfriends)['friends']));
@@ -79,7 +79,7 @@
                     </div>
                     <div class="my-4">
                     <?php
-                    $sql = "SELECT * FROM `forum_global` WHERE `username` = '$username' ORDER BY `id` DESC LIMIT 10";
+                    $sql = "SELECT * FROM `posts` WHERE `username` = '$username' ORDER BY `id` DESC LIMIT 10";
                     $result = mysqli_query($conn, $sql);
                     if (mysqli_num_rows($result) > 0){
                         // output data of each row

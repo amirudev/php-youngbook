@@ -30,7 +30,7 @@
     </div>
     <div class="content">
         <div class="product row bg-light m-3">
-            <img src="/php-youngbook/assets/image/profile_jumbotron.jpg" class="col-2 m-3">
+            <img src="/php-youngbook/assets/data/marketplace_image/default.jpg" class="col-2 m-3">
             <div class="col-9 m-3">
                 <h2><?php echo $product['item_name'] ?></h2>
                 <p>Rating Produk : * * * * *</p>
